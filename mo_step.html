@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://m.shinhansavings.com/optimal_goods?optimalGooldsMenu=optimalGooldsApply -->
+<html class="ui-mobile">
+	<head>
+	<!-- <base href="https://m.shinhansavings.com/optimal_goods?optimalGooldsMenu=optimalGooldsApply"> -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> <!-- minimal-ui-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="iOS Web App">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<meta name="author" content="신한저축은행">
+	<meta name="Keywords" content="신한저축은행, 참신한대출, 중금리대출, 사잇돌2111">
+	<meta name="description" content="저축은행 중금리대출, 무방문, 인터넷 한도조회 및 대출신청, 상담접수">
+	<meta name="copyright" content="서울특별시 중구 청계천로 54(삼각동) 3층111">
+	<title>개인정보입력</title>
+
+	<link rel="stylesheet" href="resources/css/base.css">
+	
+	<link rel="stylesheet" href="resources/css/s140724.css">
+	
+	<link rel="stylesheet" href="resources/css/themes/default/jquery.mobile-1.4.3.min.css">
+	
+	<link rel="stylesheet" href="resources/css/mobile.ajax.css">
+	
+	<link rel="stylesheet" href="resources/css/s181031.css">
+	<!-- 모바일 5차개선 20191004.-->
+	<link rel="stylesheet" href="resources/css/s201909.css">
+
+	<!-- 대환관련 추가 20210417.-->
+	<link rel="stylesheet" href="resources/css/s202104.css">
+
+	
+	<script id="emforce-jssdk" src="http://roi.emforce.co.kr/conversion/conversion_dt.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.js"></script>
+	<script type="text/javascript" src="resources/js/mobile.ajax.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.mobile-1.4.3.min.js"></script>
+	<script type="text/javascript" src="resources/js/shinhansys_lib.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$(document).bind("panelclose", function(e, data) {
+		$(".ddaragagi").css("display", "");
+		$(".ui-panel-wrapper").css("height", "100%");
+		$(".ui-panel-wrapper").css("overflow", "visible");
+		$(".ui-panel-wrapper").css("overflow-x", "hidden");
+	});
+	
+	$(document).bind("panelbeforeopen", function(e, data) {
+		$(".ddaragagi").css("display", "none");
+		$(".ui-panel-wrapper").css("height", window.innerHeight);
+		$(".ui-panel-wrapper").css("overflow", "hidden");
+	});
+	
+	$("#panel-reveal").css("height", window.innerHeight);
+	$(window).resize(function() {
+		$("#panel-reveal").css("height", window.innerHeight);
+	});
+
+	$("form").bind("keypress", function(e) {
+		if(e.keyCode == 13) {
+			return false;
+		}
+	});
+	setTelNo();
+	
+	var fn_deviceinfo = fn_SetVersionInfo;  // 단말정보 저장
+	fn_getDeviceData("getIMEI", fn_deviceinfo);
+	// 모바일 5차개선 - 타이머 초기화
+	fnInit_Timer();
+});
+
+$(document).delegate("a.top", "click", function() {
+    $("html, body").stop().animate({ scrollTop : 0 }, 500);
+    return false;
+});
+
+function fnPopDirectCall() {
+	var popupURL = "/popup/directcall";
+	
+	showDialog(popupURL, 420);
+}
+
+function directHugCall() {
+	if(!confirm("신한저축은행 스피드 허그론 상담부서로\n연결하시겠습니까?")) 	{ return; }
+	location.href = "tel:16447411";	
+}
+
+function directCenterCall() {
+	if(!confirm("신한저축은행 고객센터로\n연결하시겠습니까?")) 	{ return; }
+	location.href = "tel:16447777";	
+}
+
+function directCall() {
+	location.href = "tel:" + $("#telNo").html().replace("-", "");	
+}
+
+function webGetBridge(url, title) {
+	var currentTime = "1020";
+	
+	// 장동선D 요청, 해당시간대 팝업 및 메인 이동 기능 제거
+	// if(url.indexOf("online_sunshineloan") > 0) {
+		// if(currentTime < 400 || currentTime >= 2230) {
+			// alert("참신한중금리대출(간편) 신청 가능 시간이 아닙니다.\n(신청가능시간: 영업일 기준 04:00~22:30)");
+			// 
+			// location.href = "/main";
+			// 
+		// }
+	// }
+	
+	
+	if(url.indexOf("native") > 0) {
+		var appUrl = "";
+		var appName = "";
+		
+		
+		appUrl = "Intent://#Intent;scheme=ssbmobile;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.shinhan.smartloan;end";
+		appName = "Play스토어";
+		
+		
+		if(confirm("선택하신 메뉴를 이용하기 위해서는 신한저축은행 모바일 대출 앱을 설치하셔야 합니다. " + appName + "로 이동하시겠습니까?")) {
+			location.href = appUrl;
+		}
+	} else {
+		location.href = url;
+	}
+	
+}
+
+function webGetBridgeForReservation(value, url) {
+	
+		location.href = url + "?code=" + value;
+	
+}
+
+function webLinkBridge(url) {
+	
+		window.open(url);
+	
+}
+
+function sendShowDialogMsg() {
+	
+}
+function sendCloseDialogMsg() {
+	
+}
+
+function setTelNo() {
+	
+}
+
+//모바일 5차개선, 20190911.
+function mypageLinkBridge(url, title) {
+	console.log('url=' + url);
+	/*
+	$.ajax({
+	    type: "post",
+	    url: "/loanRenewal5/myinfo/isLogin",
+	    dataType: "json",
+	    success: function(json){
+	    	console.log(json.RESULT_NO + "," + 'url=' + url + ',' + json.isLogin);
+	    	if(json.RESULT_NO == "0000" && json.isLogin == "Y"){
+	    		webGetBridge(url, title);
+	    	}else{
+	    		if(confirm("로그인 후 이용하실 수 있는 메뉴입니다.\n로그인하시겠습니까?")) {
+	    			webGetBridge("/loanRenewal5/myinfo/login", '마이페이지');
+	    		}
+	    		
+	    	}
+	    },
+		error: function(data, textStatus, error){
+    		if(confirm("로그인 후 이용하실 수 있는 메뉴입니다.\n로그인하시겠습니까?")) {
+    			webGetBridge("/loanRenewal5/myinfo/login", '마이페이지');
+    		}
+		},
+		complete: function(){
+		}
+	});
+	*/
+	
+	var isLogin = false;
+	console.log("[smartloan_layout.jsp] isLogin=" + isLogin);
+	if(isLogin) {
+		webGetBridge(url, title);
+	} else {
+//		if(confirm("로그인 후 이용하실 수 있는 메뉴입니다.\n로그인하시겠습니까?")) {
+			if(url.indexOf("/loanRenewal5/myinfo/credit") > -1) {
+				webGetBridge("/loanRenewal5/myinfo/login?rd=" + url, '마이페이지');
+			} else {
+				webGetBridge("/loanRenewal5/myinfo/login?rd=" + url, '개인신용정보평가 대응권');
+			}
+//		}
+	}
+}
+
+/* --------------------------------------------------------------------
+단말정보 받기  *IOS는 정책상 단말정보 취득불가
+-------------------------------------------------------------------- */
+function fn_getDeviceData( method, fnCallback ){
+
+	/* 사용 sample
+	var phoneNumber = fnCommon_getDeviceData("getPhoneNumber");  // 휴대폰번호
+	var imei = fnCommon_getDeviceData("getIMEI");  // imei 정보
+	
+	*필수! 화면에 미리 선언해둘 변수
+	var device_phoneNumber = "";  // 단말에서 추출한 휴대폰번호
+	var device_imei = "";  // 단말에서 추출한 IMEI
+	*/
+	
+	// 앱여부
+	var isApp_flag = false;
+	console.log('isApp_flag=' + isApp_flag);
+	if(isApp_flag){
+		var params = {
+				pluginId: "slDevice",
+				method: "getIMEI",
+				params: {},
+				callBack : function(isOK, json){
+					// 전달받은 콜백 수행
+					fnCallback(json);
+				}
+			};
+		SDSFrameWork.plugin.execute(params);
+	}
+	
+	return true;
+};
+
+function fn_SetVersionInfo(device_result) {
+	if(device_result != null && device_result != undefined){
+		var IMEI = device_result.imei;  // 안드로이드만 추출 가능
+		var DEVICE_TYPE = device_result.DEVICE_TYPE;
+		var DEVICE_MDL = device_result.DEVICE_MDL;
+		var APP_VER = device_result.APP_VER;
+		var OS_VER = device_result.OS_VER;
+	
+		//alert("APP_VER=" + APP_VER);
+		$("#version_p").html("버전정보 " + APP_VER);
+	}
+}
+
+
+/* --------------------------------------------------------------------
+모바일 5차개선 - 타이머 초기화
+-------------------------------------------------------------------- */
+function fnInit_Timer() {
+	
+}
+
+
+</script>
+</head><body onload="" class="ui-mobile-viewport ui-overlay-a"><input type="hidden" id="isApp" value="false">  <!-- 20181113 앱여부 파라미터 보관용도 변수 추가 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> <!-- minimal-ui-->
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+
+
+
+
+   
+
+ 
+
+
+<link rel="stylesheet" href="resources/css/common.css">
+<link rel="stylesheet" href="resources/css/reset.css">
+
+
+
+<script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="resources/js/dpc_common.js;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4"></script>  <!-- iajax 스크립트 -->
+<script type="text/javascript" src="resources/js/loanRenewal4.js"></script>  <!-- 모바일대출4차개선 스크립트 -->
+<script type="text/javascript" src="resources/js/FN_EchoScriptV2.js;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4"></script>
+<script type="text/javascript" src="resources/js/general_gd.js;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4"></script>
+
+<!-- 류예샘D 신규대행사(애드게더) 트레킹 스크립트 추가 -->
+<script type="text/javascript" src="resources/js/adgather_tracking.js;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4"></script>
+
+
+	
+	
+
+<script type="text/javascript">
+
+/* ------------------------------------------------------------------------------
+	변수 선언
+------------------------------------------------------------------------------- */
+var random = "2311";	  // 위변조방지 랜덤값??
+var isIOS = "false";	  // IOS 여부
+var IP = "221.147.44.117";
+var session_check_success_yn = "N";	  // 세션 정상체크여부
+var ref = "";	  // 협력사 유입여부
+
+// 협력사 유입정보
+var sr = "";
+var sn = "";
+var sc = "";
+var se = "";
+var utmSource = "";
+var utmMedium = "";
+var utmCampaign = "";
+var utmTerm = "";
+var utmContent = "";
+var sDownGb = "";
+var suggrDistgNo = "";
+
+// 화면분기, 거래구분값 등을 결정할 변수들
+var SCRP_NHIS_ERROR_YN = "N";  // 건보스크래핑장애여부
+var SCRP_MINWON24_ERROR_YN = "N";  // 민원24스크래핑장애여부
+var SCRP_NHIS_ERROR_MSG = "";   // 건보스크래핑장애메세지
+var SCRP_MINWON24_ERROR_MSG = "";   // 민원24스크래핑장애메세지
+var SCRP_NHIS_EXP = "N";   // 건강보험스크래핑제외 여부
+var SCRP_MINWON24_EXP = "N";   // 민원24스크래핑제외 여부
+var SCRP_NHIS_SUCCESS_YN = "N";  // 건강보험 스크래핑 성공여부
+var SCRP_MINWON24_SUCCESS_YN = "";   // 민원24 스크래핑 성공여부
+var LIMIT_AMT_SEARCH_YN = "N";  // 한도조회이력여부
+var TODAY_LIMIT_AMT_SEARCH_YN = "N";  // 당일한도조회이력여부
+var CERT_HNDNO = "";  // 인증휴대폰번호
+var SUNSHINELOAN_YN = "";  // 햇살론 동의여부
+var YOUTH_GUIDE_YN = "N"; 	// 공적지원제도 과거 동의 여부
+var SCRAP_CERT_PASS_YN = "N";  // 인증서 로그인에 성공한 경우 세션이 살아있는한 스크래핑 이용시 인증서 재입력 PASS
+var REG_KIND = "";   // 전자서명상태(자서접수처 구분)
+var ST_CD = "";   // 진행상태
+var FEE_PAPER_ISSUE_YN = "";   // 보증서발급여부
+var loanPeriodCombo_maxval = "";  // 대출기간 한도
+var SHINHAN_FAN_YN = "";  // 신나는한판
+var ONLINE_DOC_C = "";  // 민원24 제출대상 여부
+var ONLINE_DOC_D = "";  // 건보+민원24 제출대상 여부
+var GOODS_CD_LNC3005 = "";  // 상품코드
+
+var qna01 = "";   // 직업 1 직장인(4대보험가입) 2 개인사업자 3 기타사업소득자인적용역제공자 4 연금소득자
+var qna02 = "";   // 고용형태 1 정규직 2 비정규직 3 근로소득미신고자 4 일용근로자
+var qna03 = "";   // 주택소유여부 1 예 2 아니오
+
+var adGather = "";	//  류예샘D 신규대행사 광고스크립트 관련 파라미터
+
+
+$(document).ready(function(){
+	
+	// 공통 기본수행
+	fnCommon_init();
+});
+
+</script>
+
+		
+		  <!-- 모바일대출4차개선 공통선언부 -->
+
+	
+	
+	<script type="text/javascript">
+	
+	window.emfAsyncInit = function(){
+	};
+	
+	//load asynchronously
+	(function(d,s,id){
+	var js, ejs = d.getElementsByTagName(s)[0];
+	if(d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "http://roi.emforce.co.kr/conversion/conversion_dt.js";
+	ejs.parentNode.insertBefore(js,ejs);
+	}(document,'script','emforce-jssdk'));
+	
+	
+
+	/* ------------------------------------------------------------------------------
+		변수 선언
+	------------------------------------------------------------------------------- */
+	var youth_age_yn = "N";	// 청년 여부
+	var appCall_yn = "null";   // 이어하기에서 유입 여부
+	
+	/* ------------------------------------------------------------------------------
+		거래 url 선언
+	------------------------------------------------------------------------------- */
+	// 고객정보 조회
+	var callURL_loanRenewal4_005_01 = "/loanRenewal4/loanRenewal4_005_01";
+
+	// 보이스피싱/청년대출 동의여부값 보관
+	var callURL_loanRenewal4_005_02 = "/loanRenewal4/loanRenewal4_005_02";
+	
+	</script>
+
+
+<div data-role="page" data-url="/optimal_goods?optimalGooldsMenu=optimalGooldsApply" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="">
+	<div class="ui-content" role="main">
+		
+			
+				
+					<div class="redesign gnb">
+					
+						
+							<div class="back_btn"><a href="/main" class="ui-link"><img src="resources/img/loanRenewal4/icon_back_20181203.png"></a></div>
+							<div class="top_title">한도조회결과</div>
+						
+							<a href="#panel-reveal" class="all-menu ui-link"><img src="resources/img/loanRenewal4/icon_menu_20181203.png" alt="전체메뉴"></a>
+					
+					</div>
+				
+			
+		
+		
+		<section id="container">
+		<!-- 한도조회결과 -->
+		<div class="contents redesign limit" style="margin-bottom:100px;">
+			<!-- 단일 상품 -->
+			<div class="limit_info">
+				<p class="single"><span>대출</span>을 신청해 주세요.</p>
+			</div>
+			<p class="limit_reult_text">선택하신 상품이 없습니다.</p>
+			<!-- //단일 상품 -->
+			<!-- 복수 상품 -->
+			<div class="limit_info">
+				<p class="double"><span>복수 선택</span>이 가능합니다.</p>
+			</div>
+			<p class="limit_reult_text">선택하신 상품이 없습니다.</p>
+			<!-- //복수 상품 -->
+			<!-- 전화 대출 -->
+			<p class="limit_reult_text">선택하신 상품이 <span>1건</span> 있습니다.</p>
+			<div class="limit_apply_info">
+				<div>
+					<p>신청액 합계</p>
+					<p><span>1,500</span>만원</p>
+				</div>
+				<div>
+					<p>평균금리</p>
+					<p>연<span>7.02</span>%</p>
+				</div>
+				<p class="limit_apply_balloon">
+					<img src="resources/limit_img/m_limit_icon_phone_money.png" />
+				</p>
+			</div>
+			<!-- //전화 대출 -->
+			<!-- 자동 대출 -->
+			<p class="limit_reult_text">선택하신 상품이 <span>1건</span> 있습니다.</p>
+			<div class="limit_apply_info">
+				<div>
+					<p>신청액 합계</p>
+					<p><span>1,500</span>만원</p>
+				</div>
+				<div>
+					<p>평균금리</p>
+					<p>연<span>7.02</span>%</p>
+				</div>
+				<p class="limit_apply_balloon">
+					<img src="resources/limit_img/m_limit_icon_auto_money.png" />
+				</p>
+			</div>
+			<!-- //자동 대출 -->
+			<!-- 복수 상품 선택 -->
+			<div class="limit_info">
+				<p class="double"><span>복수 선택</span>이 가능합니다.</p>
+			</div>
+			<p class="limit_reult_text">선택하신 상품이 <span>2건</span> 있습니다.</p>
+			<div class="limit_apply_info">
+				<div>
+					<p>신청액 합계</p>
+					<p><span>1,500</span>만원</p>
+				</div>
+				<div>
+					<p>평균금리</p>
+					<p>연<span>7.02</span>%</p>
+				</div>
+				<p class="limit_apply_balloon">
+					<img src="resources/limit_img/m_limit_icon_phone_money.png" />
+				</p>
+			</div>
+			<!-- //복수 상품 선택 -->
+
+			<div class="limit_reult">
+				<ul class="limit_reult_info">
+					<li>
+						<label for="limit_ck01" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+							<div class="limit_reult_title clearfix">
+								<span>온라잇햇살론</span>
+								<p class="limit_reult_reload">
+									<span>1,500원 신청</span>
+								</p>
+							</div>
+							<p class="limit_reult_number clearfix">
+								<span class="limit_reult_percent">7.03<span>%</span></span>
+								<span class="limit_reult_price">1,500<span>만원</span></span>
+							</p>
+						</label>
+						<input id="limit_ck01" type="checkbox" />
+						<button type="button" class="reload_btn">새로고침</button>
+					</li>
+					<li>
+						<label for="limit_ck02" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+							<div class="limit_reult_title clearfix">
+								<span>참신한중금리</span>
+								<p class="limit_reult_reload">
+									<span>1,500원 신청</span>
+								</p>
+							</div>
+							<p class="limit_reult_number clearfix">
+								<span class="limit_reult_percent">9.9<span>%</span></span>
+								<span class="limit_reult_price">3,200<span>만원</span></span>
+							</p>
+							<p class="limit_phone_info">100만원 초과하여 신청하실 경우 전화상담 필수</p>
+						</label>
+						<input id="limit_ck02" type="checkbox" />
+						<button type="button" class="reload_btn">새로고침</button>
+					</li>
+					<li>
+						<label for="limit_ck03" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+							<div class="limit_reult_title clearfix">
+								<span>참신한(대환)</span>
+								<p class="limit_reult_reload">
+									<span>1,500원 신청</span>
+								</p>
+							</div>
+							<p class="limit_reult_number clearfix">
+								<span class="limit_reult_percent">9.9<span>%</span></span>
+								<span class="limit_reult_price">1,000<span>만원</span></span>
+							</p>
+						</label>
+						<input id="limit_ck03" type="checkbox" />
+						<button type="button" class="reload_btn">새로고침</button>
+					</li>
+					<li>
+						<label for="limit_ck04" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+							<div class="limit_reult_title clearfix">
+								<span>사잇돌2대출</span>
+							</div>
+							<p class="limit_reult_number clearfix">
+								<span class="limit_reult_percent">10.5<span>%</span></span>
+								<span class="limit_reult_price">1,200<span>만원</span></span>
+							</p>
+						</label>
+						<input id="limit_ck04" type="checkbox" />
+					</li>
+				</ul>
+			</div>
+			<div class="btnArea">
+				<a href="#" class="btnLg ui-link limit_btn">대출 신청하기</a>
+			</div>
+		</div>
+		 <!-- //한도조회결과 -->
+		 <!-- 한도조회결과 popup-->
+		<!-- <div class="limit_popup_bg">
+			<div class="limit_popup">
+				<div class="limit_popup_content">
+					<strong>신청금액을 수정할 수 있습니다.</strong>
+					<table>
+						<colgroup>
+							<col width="23%" />
+							<col width="*"/>
+						</colgroup>
+						<tr>
+							<th scope="row">선택상품</th>
+							<td>
+								<div class="limit_popup_content_title clearfix">
+									<p class="limit_popup_content_strong">온라인햇살론</p>
+									<p class="limit_popup_content_percent"><span>연</span> 7.02<span>%</span></p>
+								</div>
+								<p class="limit_popup_content_cost"><span>신청가능금액</span> 1,500<span>만원</span></p>
+							</td>
+						</tr>
+						<tr>
+							<th class="th_input" scope="row">신청금액</th>
+							<td>
+								<div class="limit_popup_content_input">
+									<div><input type="text"/><span class="input_text">만원</span></div>
+									<p class="limit_popup_cost_info">* 보증료 약 100만원 치감후 지급</p>
+									<p class="limit_popup_cost_info">* 100만원 초과하실 경우 전화상담 필수</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="limit_popup_btn">
+					<button type="button" class="btn_cancel">취소</button>
+					<button type="button" class="btn_ok">확인</button>
+				</div>
+			</div>
+		</div> -->
+		<!-- //한도조회결과 popup-->
+		<!-- 복수상품 popup -->
+		<!-- <div class="limit_popup_bg">
+			<div class="limit_popup limit_popup_double">
+				<div class="limit_popup_content">
+					<strong>참신한(대환) 선택하셨습니다. <br />
+						대환대상을 선택해 주십시오. 
+					</strong>
+					<div class="limit_popup_double_wrap">
+						<div class="limit_popup_double_info clearfix">
+							<p>대환선택이 <span class="cont">1건</span> 있습니다.</p>
+							<p>대환합계<span>약 280만원</span></p>
+						</div>
+						<div class="limit_popup_double_content">
+							<p>대환추천</p>
+							<ul>
+								<li>
+									<label for="limit_popup_ck01" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+										<div class="limit_popup_double_title clearfix">
+											<span>KB카드</span>
+											<span class="popup_double_cardtype">카드론</span>
+										</div>
+										<p class="limit_popup_double_number clearfix">
+											<span class="limit_popup_double_date">2019.03.13</span>
+											<span class="limit_popup_double_price">약<span>280</span>만원</span>
+										</p>
+									</label>
+									<input id="limit_popup_ck01" type="checkbox" />
+								</li>
+								<li>
+									<label for="limit_popup_ck02" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+										<div class="limit_popup_double_title clearfix">
+											<span>신한카드</span>
+											<span class="popup_double_cardtype">카드론</span>
+										</div>
+										<p class="limit_popup_double_number clearfix">
+											<span class="limit_popup_double_date">2019.03.13</span>
+											<span class="limit_popup_double_price">약<span>110</span>만원</span>
+										</p>
+									</label>
+									<input id="limit_popup_ck02" type="checkbox" />
+								</li>
+								<li>
+									<label for="limit_popup_ck03" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+										<div class="limit_popup_double_title clearfix">
+											<span>삼성카드</span>
+											<span class="popup_double_cardtype">카드론</span>
+										</div>
+										<p class="limit_popup_double_number clearfix">
+											<span class="limit_popup_double_date">2019.03.13</span>
+											<span class="limit_popup_double_price">약<span>180</span>만원</span>
+										</p>
+									</label>
+									<input id="limit_popup_ck03" type="checkbox" />
+								</li>
+								<li>
+									<label for="limit_popup_ck04" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+										<div class="limit_popup_double_title clearfix">
+											<span>우리카드</span>
+											<span class="popup_double_cardtype">카드론</span>
+										</div>
+										<p class="limit_popup_double_number clearfix">
+											<span class="limit_popup_double_date">2019.03.13</span>
+											<span class="limit_popup_double_price">약<span>240</span>만원</span>
+										</p>
+									</label>
+									<input id="limit_popup_ck04" type="checkbox" />
+								</li>
+
+								<li>
+									<label for="limit_popup_ck05" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-on">
+										<div class="limit_popup_double_title clearfix">
+											<span>비씨카드</span>
+											<span class="popup_double_cardtype">카드론</span>
+										</div>
+										<p class="limit_popup_double_number clearfix">
+											<span class="limit_popup_double_date">2019.03.13</span>
+											<span class="limit_popup_double_price">약<span>710</span>만원</span>
+										</p>
+									</label>
+									<input id="limit_popup_ck05" type="checkbox" />
+								</li>
+							</ul>
+						</div>
+						<div class="limit_popup_double_apply">
+							<p>고객님! 대환합계 약 280만원 외 <br />
+								추가로 <span>신규한도도 가능</span>합니다. <br />
+								신규한도도 같이 신청하시겠습니까?
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="limit_popup_btn">
+					<button type="button" class="btn_cancel">취소</button>
+					<button type="button" class="btn_ok">확인</button>
+				</div>
+			</div>
+		</div> -->
+		<!-- //복수상품 popup  -->
+	</section>
+	
+
+
+
+
+
+
+
+<script type="text/javascript" src="resources/nfilter/js/nFilter.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+//<![CDATA[    
+	// ----------------------------------
+	// TODO: You must set - nFilter Variables
+	// ----------------------------------
+	nFilterSiteCode ="";
+	nFilterContextPath = "";
+	nFilterJSPath = nFilterContextPath + "/resources/nfilter/js/";
+	nFilterCSSPath = nFilterContextPath + "/resources/nfilter/css/";
+	nFilterCSSMobilePath = nFilterContextPath + "/resources/nfilter/css/";
+	
+	nFilterIsResourceAutoLoad = false;
+	nFilterIsNonSecretKeypad = false;
+	nFilterFileEncoding = "UTF-8";
+	nFilterDefaultLanguage = "ko"; // Default
+	nFilterLanguage = "ko"; // Default
+	nFilterImageRenderType = "m";
+	nFilterRandomIdLength = 10;
+	nFilterUserInputMin = 2;
+	nFilterUserInputMax = 50;
+	nFilterIsKeypadEncode = true;
+	nFilterIsEncryptImmediate = true;
+	var nFilterCertReturnURL = "";
+	
+//]]>
+</script>
+  <!-- 보안키패드 -->
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		if( !fnCommon_isNull(appCall_yn)  &&  appCall_yn == "Y" ){			
+		}else{
+			fnClear_Session();
+		}
+		
+		// 기본수행
+		loanRenewal4_005.fnInit();
+	});
+	
+	function fnClear_Session() {
+		$("#logout_btn").css("background-color", "transparent");
+		// 앱여부 
+		var isApp_flag = fnCommon_isApp();
+		if(isApp_flag) {
+			var params = {
+					pluginId: "slCommon",
+					method: "appLogout",
+					params: {
+					},
+					callBack: function(isOK, json){
+						if(json.result == "true"){
+						}else{
+						}
+					}
+				};
+			SDSFrameWork.plugin.execute(params);	
+		}
+		
+		var callURL = "/clearSessionCustInfo";
+		
+		iajax.clearParam();	
+
+		$.ajax({
+			type: "post",
+			url: callURL,
+			dataType: "json",
+			data: iajax.postparam,
+			success: function(json) {},
+			error: function(data, textStatus, error) {},
+			complete: function() {}
+		});		
+	}
+	
+	/* --------------------------------------------------------------------------------------
+		보이스피싱 예방 안내 [예] 버튼 클릭 이벤트
+	 -------------------------------------------------------------------------------------- */
+	function clickPhishingYBtn() {
+		$("#guideTxt2Depth").show();
+		$("#guideTxt2").attr("class", "title_1Depth_Ctype");
+		
+		$("#phishingLBtn").text("다시 시작");
+		$("#phishingLBtn").removeAttr("onclick");
+		$("#phishingLBtn").attr("onclick", "clickRestartBtn();");
+		$("#phishingRBtn").text("홈으로 이동");
+		$("#phishingRBtn").removeAttr("onclick");
+		$("#phishingRBtn").attr("onclick", "javascript:fnCommon_goHome();");
+		
+	}
+	
+	/* --------------------------------------------------------------------------------------
+		보이스피싱 예방 안내 [다시 시작] 버튼 클릭 이벤트
+	 -------------------------------------------------------------------------------------- */
+	function clickRestartBtn() {
+		$("#guideTxt2Depth").hide();
+		$("#guideTxt2").attr("class", "title_1Depth_Ctype depth_End");
+		
+		$("#phishingLBtn").text("예");
+		$("#phishingLBtn").removeAttr("onclick");
+		$("#phishingLBtn").attr("onclick", "clickPhishingYBtn();");
+		$("#phishingRBtn").text("아니오");
+		$("#phishingRBtn").removeAttr("onclick");
+		$("#phishingRBtn").attr("onclick", "javascript:loanRenewal4_005.fnNext_1();");
+		
+	}
+	
+	</script>
+	</div>
+	
+	<!-- 모바일대출4차개선 공통으로 버튼이 이동할 영역 // index 문제로 뒤로 숨는 현상이 있어 바닥으로 내리기로 함. -->
+	<div id="loanRenewal4_button_area_paste"></div>
+	
+	
+	
+	<!-- 전체메뉴 -->
+	<!-- 모바일 5차개선, 20191004. -->
+	<!-- data-display="reveal" -> data-display="overlay" 변경 -->
+	<div data-role="panel" id="panel-reveal" data-position="right" data-display="overlay" data-theme="b" class="panel_reveal ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate" style="height: 442px; overflow-y: auto;">
+		<div class="ui-panel-inner">
+			<div class="panel_top">
+				<!-- 모바일 5차개선, 20191004, 이미지로 변경-->
+				<div class="panel_title"><img src="resources/images/logo.png" alt=""></div>
+				<dl>
+					<!-- 모바일 5차개선, 20191004 dd > img 새이미지로 변경 -->
+					<dd class="panel_home"><a href="javascript:webGetBridge('/main','');" data-rel="home" class="ui-link"><img src="resources/images/home.png"></a></dd>
+					<dd class="panel_close"><a href="#" data-rel="close" class="ui-link"><img src="resources/images/closed.png"></a></dd>
+				</dl>
+			</div>
+			<dl class="panel_list">
+				
+				<dt class="right_menu_icon01">
+					<a href="javascript:webGetBridge('/goods/list/ALL','대출상품');" class="ui-link">대출상품</a>
+				</dt>	
+					
+				<dt class="right_menu_icon03"><a href="javascript:webGetBridge('/optimal_goods','통합상품조회');" class="ui-link">통합상품조회</a></dt>
+				
+				<dt class="right_menu_icon04"><a href="javascript:webGetBridge('/optimal_goods','최적상품신청');" class="ui-link">최적상품신청</a></dt>
+				
+				<dt class="right_menu_icon02"><a href="javascript:webGetBridge('/reservation','간편상담예약');" class="ui-link">간편상담예약</a></dt>
+				
+				<!-- 모바일 5차개선, 수정 -->
+				<dt class="right_menu_icon05"><a href="javascript:webGetBridge('/loanRenewal5/auth_person/step1','본인인증');" class="ui-link">본인인증</a></dt>
+				<dt class="right_menu_icon06"><a href="javascript:webGetBridge('/native','온라인 서류 제출');" class="ui-link">온라인서류제출</a></dt>
+				<dt class="right_menu_icon06"><a href="javascript:webGetBridge('/native','대출진행조회');" class="ui-link">대출진행조회</a></dt>
+			</dl><!-- 모바일 5차개선  20191004, </dl> 추가 -->
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a" class="left_menu_accordion ui-collapsible-set ui-group-theme-a ui-corner-all" id="viewContents">
+				<dl class="panel_list"> <!-- 모바일 5차개선  20191004. 클래스 추가 -->
+					<dt class="right_menu_icon07" style="">
+						<a href="javascript:mypageLinkBridge('/loanRenewal5/myinfo/loanAccount','마이페이지');" class="ui-link">마이페이지</a>
+						<div data-role="collapsible" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content" data-collapsed="false"><h3 class="ui-collapsible-heading newArrow"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-minus ui-btn-icon-left ui-btn-a">
+							<span class="ui-collapsible-heading-status"> click to collapse contents</span></a></h3><div class="ui-collapsible-content ui-body-a" aria-hidden="false">
+							
+		
+							<div class="loan_guide_accordion newArrowDepth">
+								<dl>
+									<!-- 모바일 5차개선, 20190911. 마이페이지 링크 수정 -->
+									<dd class=""><a href="javascript:mypageLinkBridge('/loanRenewal5/myinfo/loanRepayInqury','대출원리금 상환');" class="ui-link" style="letter-spacing:-1px;">대출원리금 상환</a></dd>
+									<dd class=""><a href="javascript:mypageLinkBridge('/loanRenewal5/myinfo/certificate_issuance','증명서 발급 신청');" class="ui-link" style="letter-spacing:-1px;">증명서 발급 신청</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('/native','자동이체계좌 변경');" class="ui-link" style="letter-spacing:-1px;">자동이체계좌 변경</a></dd>
+									<dd class=""><a href="javascript:mypageLinkBridge('/loanRenewal5/myinfo/modification','내 정보 수정');" class="ui-link" style="letter-spacing:-1px;">내정보수정</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('/interest_rate_reduction/step1','금리인하요구권 신청');" class="ui-link">금리인하요구권 신청</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('/loan_withdrawal/step1','대출청약 철회 신청');" class="ui-link">대출청약 철회 신청</a></dd>
+									<dd class=""><a href="javascript:mypageLinkBridge('/loanRenewal5/myinfo/credit','개인신용정보평가 대응권 신청');" class="ui-link">개인신용정보평가 대응권 신청</a></dd>
+								</dl>
+							</div>
+						</div></div>
+					</dt>
+					<dt class="right_menu_icon08" style=""><a href="javascript:webGetBridge('/counseling_center','고객센터');" class="ui-link">고객센터</a>
+						<div data-role="collapsible" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed newArrow"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-a">
+							<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+							
+							<div class="loan_guide_accordion newArrowDepth">
+								<dl>
+									<dd class=""><a href="javascript:webGetBridge('/native','공인인증센터');" class="ui-link">공인인증센터</a></dd>
+									<dd class=""><a href="javascript:webLinkBridge('https://www.shinhansavings.com/cogud_0001A_01.act','회사소개');" class="ui-link">회사소개</a></dd>
+									<dd class=""><a href="javascript:webLinkBridge('https://m.shinhansavings.com/branch_detail','영업점 안내');" class="ui-link">영업점 안내</a></dd>
+									<dd class=""><a href="javascript:webLinkBridge('https://www.shinhansavings.com/prdgud_0001A_02.act','거래약관');" class="ui-link">거래약관</a></dd>									
+									<dd class=""><a href="javascript:webGetBridge('/board/list','공지/이벤트');" class="ui-link">공지/이벤트</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('https://m.shinhansavings.com/faq/list','자주묻는 질문');" class="ui-link">자주묻는 질문</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('/loan_guide','대출가이드');" class="ui-link">대출가이드</a></dd>
+									<dd class=""><a href="javascript:webGetBridge('/finTransNotes;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4','금융거래 유의사항');" class="ui-link">금융거래 유의사항</a></dd>
+									<dd class=""><a href="javascript:webLinkBridge('https://www.shinhansavings.com/privacy_0001A_08.act','신용정보 활용체제');" class="ui-link">신용정보 활용체제</a></dd>
+									<dd class=""><a href="javascript:webLinkBridge('https://www.shinhansavings.com/privacy_0001A_02.act','개인정보처리방침');" class="ui-link"><span>개인정보처리방침</span></a></dd>
+									
+								</dl>
+							</div>
+						</div></div>
+					</dt>
+					
+			
+				</dl>
+			</div>			
+			<!-- 201909 새로 작성 -->
+			<div class="panel_shortcut_icon">
+				<p class="panel_shortcut_title">신한저축은행 APP</p>
+				
+				
+				<a href="javascript:void(0);" onclick="javascript:webLinkBridge('Intent://#Intent;scheme=ssbmobile;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.shinhan.spbs;end');" class="ui-link">
+					<img src="resources/img/app_icon_04.png" style="display:unset">
+					<span>스마트뱅킹 바로가기</span>
+				</a>
+					
+				<!-- <p class="panel_version" id="version_p">버전정보 1.7.8</p> -->
+				<p class="panel_version" id="version_p"></p>
+			</div>
+		</div>
+	</div>
+	
+	
+
+<style type="text/css">
+#mask {position:absolute; left:0; top:0; z-index:9998; background-color:#000; display:none;}
+#boxes .window {position:fixed; display:none; z-index:9999; height:420px; width:400px;}
+#dialog_body {width:100%; height:100%; background-color:#fff; -webkit-overflow-scrolling:touch; overflow-y:visible; overflow-x:hidden;}
+
+.ajax_load_mask {width:100%; height:100%; left:0; top:0; margin:0; background:rgba(0,0,0,0.7); display:none; position:fixed; z-index:9999998;}
+.ajax_loader{display:none;z-index:9999999;position:fixed;width:40px; height:40px;top:50%;left:50%;margin-left:-20px;margin-top:-20px;border:0;filter:Alpha(Opacity = 18);opacity:.18;}
+.ajax_loader .ajax_icon_loading{width:40px; height:40px; background-size: 40px 40px; background-image: url("/resources/css/themes/default/images/ajax-loader.gif;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4");}
+
+::-webkit-scrollbar {width:5px;height:5px;border:3px solid #ccc;}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {display:block;height:10px;background:#ccc}
+::-webkit-scrollbar-track {background:#ccc;-webkit-border-radius:0;border-radius:0;-webkit-box-shadow:none;}
+::-webkit-scrollbar-thumb {height:5px;width:5px;background:#999;-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:none;}
+.scroller::-webkit-scrollbar {display:none;}
+</style>
+<script>
+$(document).ready(function(){
+	var dialog_height = 0;
+	var ori_dialog_height = 0;
+	var max_dialog_width = 400;
+
+	window.showDialog = function(url, height) {
+		sendShowDialogMsg();
+		
+		$(".ddaragagi").css("display","none");
+		
+		document.getElementById("dialog_head").style.display = "block";
+		if(height != null) {
+			dialog_height = height;
+		} else {
+			dialog_height = 420;
+		}
+		ori_dialog_height = dialog_height;
+		
+		var content = '<iframe onLoad="resizer(this);" style="border: 0px;" src="'+url+'" width="100%" height="100%"></iframe>';
+		$("#dialog_body").html(content);
+		
+		resize_layer_popup();
+
+		//transition effect		
+		$('#mask').fadeIn(100);	
+		$('#mask').fadeTo("slow",0.8);	
+
+		//transition effect
+		$("#dialog").fadeIn(100); 
+	};
+		
+	resizer = function(obj) {
+		var doc = obj.contentWindow.document;
+		var body_ = doc.body, html_ = doc.documentElement;
+		
+		var height = Math.max(body_.scrollHeight, body_.offsetHeight, html_.clientHeight, html_.scrollHeight, html_.offsetHeight);
+		obj.height = height + "px";
+	};
+
+	window.closeDialog = function() {
+		console.log("closeDialog");
+		
+		sendCloseDialogMsg();
+		
+		$(".ddaragagi").css("display","");
+		$('#mask').hide();
+		$('.window').hide();
+		$("#dialog_body").html("");
+		$("#dialog_title").html("");
+	};
+	
+	window.resizeDialog = function(height) {
+		console.log("resizeDialog");
+		dialog_height = height;
+		
+		resize_layer_popup();
+	};
+	
+	resize_layer_popup = function() {
+		console.log("resize");
+		// mask
+		var maskHeight = $(document).height();
+		var maskWidth = $(document).width();
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		if(dialog_height > window.innerHeight) {
+			dialog_height = window.innerHeight - 20;
+		} else if(dialog_height < (window.innerHeight-20) && dialog_height < ori_dialog_height ) {
+			dialog_height = ori_dialog_height;
+		}
+		
+		var dialog_width = max_dialog_width;
+		if(max_dialog_width > ($(window).width()-20)) {
+			dialog_width = $(window).width()-20;
+		}
+		
+		// box
+		var box = $('#boxes .window');
+		box.css('height', dialog_height);
+		box.css('width', dialog_width);
+		
+		var body = $('#boxes .dialog_body');
+		body.css('height', dialog_height-50);
+		
+		//Get the window height and width
+		var top = window.innerHeight/2 - box.height()/2;
+		var left = $(window).width()/2 - box.width()/2;
+		//Set the popup window to center
+		box.css('top',  top);
+		box.css('left', left);
+	};
+	
+	window.setDialogTitle = function(title) {
+		console.log("setDialogTitle");
+		$("#dialog_title").html(title);
+	};
+
+	window.setCloseDialog = function() {
+		console.log("window .close");
+		//Cancel the link behavior
+		closeDialog();
+		document.getElementById("dialog_head").style.display = "none";
+	};
+	
+	window.hideHead = function() {
+		$("#dialog_head").css("display", "none");
+	};
+	
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		console.log("window .close");
+		//Cancel the link behavior
+		e.preventDefault();
+		closeDialog();
+		document.getElementById("dialog_head").style.display = "none";
+	});	
+	
+	$(window).resize(function () {
+		resize_layer_popup();
+	});
+	
+	window.showMask = function() {
+		$(".ajax_load_mask").css("display","block");
+		$(".ajax_loader").css("display","block");
+	};
+	
+	window.hideMask = function() {
+		$(".ajax_load_mask").css("display","none");
+		$(".ajax_loader").css("display","none");
+	};
+	
+	window.setDialogTitleSize = function() {
+		$("#dialog_title").css("font-size", "15px");
+	};
+	
+	window.showDialogScroll = function() {
+		$("#dialog_body").css("-webkit-overflow-scrolling", "touch");
+	};
+	
+	window.hideDialogScroll = function() {
+		$("#dialog_body").css("overflow-y", "auto");
+		$("#dialog_body").css("-webkit-overflow-scrolling", "");
+	};
+});
+</script>
+<div id="boxes">
+	<div id="dialog" class="window" style="height: 0px; width: 400px; top: 221px; left: 442px;">
+		<div id="dialog_head" style="display:none">
+			<div id="dialog_title"></div>
+			<div id="dialog_close"><a href="#" class="close ui-link"><img src="/resources/img/dialog_close_icon.png;jsessionid=sq2uSoqA0svDjjpiMNUmxdyo6kJxp95whmwdOqQfuEEw0CYfJuxFG3FKIUDPEh3E.kstockweb2_servlet_engine4"></a></div>
+		</div>
+		<div id="dialog_body" class="dialog_body" style="height: 0px;"></div>
+	</div>
+	<div id="mask" style="width: 1284px; height: 442px;"></div>
+	<div class="ajax_loader">
+		<div class="ajax_icon_loading"></div>
+	</div>
+</div>
+<div class="ajax_load_mask"></div>
+</div>
+
+<div class="ajax-loading-area" style="display: none;">
+	<div class="ajax-loading-icon"></div>
+</div>
+
+<div class="ui-loader-background" style="display: none;"></div>
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default ui-loader-fakefix" style="top: 447.5px;"><span class="ui-icon-loading"></span><h1></h1></div><div class="ui-panel-dismiss">
+
+</div>
+</body>
+</html>
