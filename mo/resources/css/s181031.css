@@ -1,0 +1,602 @@
+@charset utf-8;
+/* Shinhan DS Kim Byeong Su 02-2010-1288 20181031 */
+/* Shinhan Savings Mobile WEB */
+
+/* font 대응 */
+.NotoSans {font-family:'NotoSans-Medium';}
+.redesign label {font-family:'NotoSans-Light';}
+
+/* checkbox */
+	/* checkbox_Af */
+.contents.redesign input[type="checkbox"].checkBox {overflow:hidden;margin:0;padding:0;width:21px;height:21px;vertical-align:top;border:0;background:url('../img/loanRenewal4/checkbox_C.png') no-repeat 0 0;background-size:cover;-webkit-appearance:none;border-radius:0; background-position:0 bottom;}
+.contents.redesign input[type="checkbox"].checkBox:checked {background-position:0 top;}
+.contents.redesign input[type="checkbox"].checkBox:disabled {background-position:0 -40px;}
+.contents.redesign input[type="checkbox"].checkBox:checked:disabled {background-position:0 -60px;}
+.contents.redesign input[type="checkbox"].checkBox + label {display:inline-block;padding-left:7px;line-height:145%;}
+	/* checkbox_B */
+.contents.redesign .agree_li_li input[type="checkbox"].checkBox {overflow:hidden;margin:0;padding:0;width:20px;height:20px;vertical-align:top;border:0;background:url('../img/loanRenewal4/checkbox_B.png') no-repeat 0 0;background-size:cover;-webkit-appearance:none;border-radius:0; background-position:0 bottom;}
+.contents.redesign .agree_li_li input[type="checkbox"].checkBox:checked {background-position:0 top;}
+.contents.redesign .agree_li_li input[type="checkbox"].checkBox + label {display:inline-block;padding-left:7px;line-height:145%;}
+	/* icon_Check_TypeB  20190108 KBS*/
+.contents.redesign .icon_Check_TypeB input[type="checkbox"].checkBox {overflow:hidden;margin:0;padding:0;width:20px;height:20px;vertical-align:top;border:0;background:url('../img/loanRenewal4/checkbox_B.png') no-repeat 0 0;background-size:cover;-webkit-appearance:none;border-radius:0; background-position:0 bottom;}
+.contents.redesign .icon_Check_TypeB input[type="checkbox"].checkBox:checked {background-position:0 top;}
+.contents.redesign .icon_Check_TypeB input[type="checkbox"].checkBox + label {display:inline-block;padding-left:7px;line-height:145%;}
+
+/* 기본 리디자인 폼 정의 */
+/* as-is 대응 */
+.contents.redesign {margin-bottom:50px; padding:0px; font-family:'NotoSans-Light' !important;}
+.contents.redesign h2 {font-family:'NotoSans-Medium' !important; font-weight:400;}
+.contents.redesign .ui-btn {display: inline-block;position: static;margin: 0;padding: 0;text-align: left;text-overflow: inherit;overflow: visible;white-space: inherit;cursor: inherit;}
+.contents.redesign ., 
+.contents.redesign .ui-radio {display:inline-block;margin:0;position:static;}
+.contents.redesign .ui-checkbox:after, 
+.contents.redesign .ui-radio:after {content:'';display:block;clear:both;}
+.contents.redesign .ui-checkbox .ui-btn, 
+.contents.redesign .ui-radio .ui-btn { padding:0;width:auto;text-align: left;white-space:inherit;z-index:0;}
+.contents.redesign .ui-radio .ui-btn.ui-radio-off:after {background:none;border:none;}
+.contents.redesign .ui-btn.ui-checkbox-off:after, 
+.contents.redesign .ui-btn.ui-checkbox-on:after, 
+.contents.redesign .ui-btn.ui-radio-off:after, 
+.contents.redesign .ui-btn.ui-radio-on:after {display: none;width: 0;height: 0;,margin:0}
+.contents.redesign .ui-radio .ui-btn.ui-radio-on:after {display: none;}
+.contents.redesign .ui-checkbox input, 
+.contents.redesign .ui-btn input {display:inline-block;z-index:0;position:static;left:auto;top:auto;}
+.contents.redesign .ui-radio input {display:inline-block;float:left;z-index:0;position:static;left:auto;top:auto;}
+.contents.redesign .ui-body-a, .ui-page-theme-a .ui-body-inherit, 
+html .contents.redesign .ui-body-a, 
+html .contents.redesign .ui-page-theme-a 
+html .contents.redesign .ui-body-inherit {color: inherit;background-color: transparent;border-color: transparent; }
+
+
+.contents.redesign .ui-input-text {float:none;border:0;border-radius:0;}
+.contents.redesign .ui-select {position:static;margin:0; height:38px; font-family:'NotoSans-Light'; font-size:13px; letter-spacing:-0.15em;}
+.contents.redesign .ui-select .ui-btn {color: inherit;background-color: transparent;border:0;border-radius:0; font-family:'NotoSans-Light'; font-size:13px; letter-spacing:-0.15em;}
+.contents.redesign .ui-select .ui-btn select {position: static;top: auto;left: auto;width: 100%;line-height: normal;height: 38px;filter: Alpha(Opacity=1);opacity:1;z-index: 0;font-weight: normal; border:0; font-family:'NotoSans-Light'; font-size:13px; letter-spacing:-0.15em;}
+.contents.redesign .ui-select .ui-btn select {border-bottom:1px solid #dddddd;border-radius:0; font-family:'NotoSans-Light'; font-size:13px; letter-spacing:-0.15em;}
+
+.contents.redesign .loan_day .ui-select .ui-btn select {border-bottom:0; min-width:60px;}
+.contents.redesign .loan_day {border-bottom:1px solid #ddd;}
+.contents.redesign .ui-select .ui-btn>span:not(.ui-li-count) {display:none;}
+.contents.redesign .ui-btn-icon-left:after, 
+.contents.redesign .ui-btn-icon-right:after, 
+.contents.redesign .ui-btn-icon-top:after, 
+.contents.redesign .ui-btn-icon-bottom:after, 
+.contents.redesign .ui-btn-icon-notext:after { display:none }
+
+
+
+.reDesignPop .ui-btn {display: inline-block;position: static;margin: 0;padding: 0;text-align: left;text-overflow: inherit;overflow: visible;white-space: inherit;cursor: inherit;}
+
+.reDesignPop .ui-radio {display:inline-block;margin:0;position:static;}
+.reDesignPop .ui-checkbox:after, 
+.reDesignPop .ui-radio:after {content:'';display:block;clear:both;}
+.reDesignPop .ui-checkbox .ui-btn, 
+.reDesignPop .ui-radio .ui-btn { padding:0;width:auto;text-align: left;white-space:inherit;z-index:0;}
+.reDesignPop .ui-radio .ui-btn.ui-radio-off:after {background:none;border:none;}
+.reDesignPop .ui-btn.ui-checkbox-off:after, 
+.reDesignPop .ui-btn.ui-checkbox-on:after, 
+.reDesignPop .ui-btn.ui-radio-off:after, 
+.reDesignPop .ui-btn.ui-radio-on:after {display: none;width: 0;height: 0;,margin:0}
+.reDesignPop .ui-radio .ui-btn.ui-radio-on:after {display: none;}
+.reDesignPop .ui-checkbox input, 
+.reDesignPop .ui-btn input {display:inline-block;z-index:0;position:static;left:auto;top:auto;}
+.reDesignPop .ui-radio input {display:inline-block;float:left;z-index:0;position:static;left:auto;top:auto;}
+.reDesignPop .ui-body-a, .ui-page-theme-a .ui-body-inherit, 
+html .reDesignPop .ui-body-a, 
+html .reDesignPop .ui-page-theme-a 
+html .reDesignPop .ui-body-inherit {color: inherit;background-color: transparent;border-color: transparent; }
+.reDesignPop .ui-input-text {float:none;border:0;border-radius:0;}
+.reDesignPop .ui-select {position:static;margin:0; height:38px;}
+.reDesignPop .ui-select .ui-btn {color: inherit;background-color: transparent;border:0;border-radius:0; padding:0;}
+.reDesignPop .ui-select .ui-btn select {position: static;top: auto;left: auto;width: 100%;line-height: normal;height: 38px;filter: Alpha(Opacity=1);opacity:1;z-index: 0;font-weight: normal; border:0;}
+.reDesignPop .ui-select .ui-btn select {border-bottom:1px solid #dddddd;border-radius:0}
+.reDesignPop .loan_day .ui-select .ui-btn select {border-bottom:0;}
+.reDesignPop .loan_day {border-bottom:1px solid #ddd;}
+.reDesignPop .ui-select .ui-btn>span:not(.ui-li-count) {display:none;}
+.reDesignPop .ui-btn-icon-left:after, 
+.reDesignPop .ui-btn-icon-right:after, 
+.reDesignPop .ui-btn-icon-top:after, 
+.reDesignPop .ui-btn-icon-bottom:after, 
+.reDesignPop .ui-btn-icon-notext:after { display:none }
+
+
+
+/* toggleArea : accordion */
+/* 기본 */
+.contents.redesign .toggleArea .toggleList {border-bottom:1px solid #ddd; /* border-left:1px solid #ddd; border-right:1px solid #ddd; */}
+.contents.redesign .toggleArea .toggleList > li {position:relative;border-top:1px solid #ddd; border-bottom:0;}
+.contents.redesign .toggleArea .toggleList > li.active {border-bottom:5px solid #eee;}
+.contents.redesign .toggleArea .toggleList > li.active:after {content:'';position:absolute;top:-1px;left:0;width:100%;height:0px;}
+.contents.redesign .toggleArea .toggleList > li .btnToggle {display:block;position:relative;padding:13px 40px 13px 12px;width:100%;letter-spacing:-0.05em;line-height:1.4;color:#777;}
+.contents.redesign .toggleArea .toggleList > li .btnToggle:after {content:'';position:absolute;top:50%;right:10px;width:25px;height:25px;
+background:url('../img/loanRenewal4/Dropdown_off.png') no-repeat 100% 50%;background-size:100% 100%;
+transform:translateY(-50%);-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);}
+.contents.redesign .toggleArea .toggleList > li.active .btnToggle {color:#333;border-bottom:1px solid #ddd;background:#fff;}
+.contents.redesign .toggleArea .toggleList > li.active .btnToggle:after {background-image: url('../img/loanRenewal4/Dropdown_on.png');}
+
+.contents.redesign .toggleArea .toggleList > li.active .btnToggle.no_icon:after {background-image:none;}
+
+.contents.redesign .toggleArea .toggleList > li .btnToggle h2 {font-size:14px; color:#aaa;}
+.contents.redesign .toggleArea .toggleList > li.active .btnToggle h2 {color:#222;}
+.contents.redesign .toggleArea .toggleList > li .toggleCont {display:none;padding:12px;}
+.contents.redesign .toggleArea .toggleList > li.active .toggleCont {display:block;}
+.contents.redesign .toggleArea .toggleList > li.checkToggle a{background-color:#eee;}
+.contents.redesign .toggleArea .toggleCont .question {margin-top:18px;position:relative;padding-left:0px;font-size:13px;line-height:140%;}
+.contents.redesign .toggleArea .toggleCont .question:first-child {margin-top:0;color:#222;}
+.contents.redesign .toggleArea .toggleCont .question:before {display:none;}
+.contents.redesign .toggleArea .toggleCont .answer {margin-top:7px;}
+.contents.redesign .toggleArea .toggleCont .answer > li {margin-top:3px;}
+.contents.redesign .toggleArea .toggleCont .answer > li:after {}
+.contents.redesign .toggleArea .toggleCont .answer > li div {width:100%;}
+.contents.redesign .toggleArea .toggleCont .answer > li label {display:inline-block;max-width:90%;font-size:13px;text-align:left; padding-left:5px; border:0; color:#222;}
+.contents.redesign .toggleArea .toggleCont .answer > li input[type="radio"].radioBtn {overflow:hidden;margin:0;padding:0;width:20px;height:20px;vertical-align:top;border:0;background:url('../img/loanRenewal4/radiobtn.png') no-repeat 0 0;background-size:cover;-webkit-appearance:none;background-position:0 bottom; background-size:100% auto;}
+.contents.redesign .toggleArea .toggleCont .answer > li input[type="radio"].radioBtn:checked {background-position:0 top;}
+.contents.redesign .toggleArea .toggleCont .answer > li input[type="radio"].radioBtn:disabled {background-position:0 -40px;}
+.contents.redesign .toggleArea .toggleCont .answer > li input[type="radio"].radioBtn:checked:disabled {background-position:0 -60px;}
+.contents.redesign .toggleArea .toggleCont .answer > li input[type="radio"].radioBtn + label {display:inline-block;max-width:90%;line-height:145%;letter-spacing:-0.05em;}
+
+.redesign.btnArea {height:53px; padding:0; z-index:10;background:none;}
+.redesign.btnArea a.btnLg {color:#fff; border-radius:0; height:53px; background-color:#3858ed; z-index:99999;}
+
+.redesign.btnArea.btnHoldNone {position:relative; bottom:auto;}
+
+.contents.redesign .btnArea {height:53px; padding:0; z-index:10;}
+.contents.redesign .btnArea a.btnLg {color:#fff; border-radius:0; height:53px; background-color:#3858ed;}
+
+.allChkArea {width:100%; background:#fff; border:1px solid #3858ed; text-align:center; margin-bottom:12px;}
+.allChkArea label {border:0; text-align:center;}
+.contents.redesign .allChkArea .ui-checkbox {width:100%;}
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn {border:0; text-align:center; color:#3858ed !important; font-size:14px; padding:10px 10px 10px 0; width:100%;border-radius:0;}
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn.ui-checkbox-off {color:#3858ed !important;}
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn.ui-checkbox-on {color:#fff !important;background-color:#3858ed;}
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn span {margin-left:2px;}
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn.ui-checkbox-off span {display:inline-block; width:22px; height:22px; font-size:0; background:url('../img/loanRenewal4/checkbox_B.png') no-repeat center top; background-size: 100% auto; vertical-align:top; }
+.ui-page-theme-a .contents.redesign .allChkArea .ui-checkbox .ui-btn.ui-checkbox-on span {display:inline-block; width:22px; height:22px; font-size:0; background:url('../img/loanRenewal4/checkbox_B.png') no-repeat center bottom;background-size: 100% auto; vertical-align:top; }
+.contents.redesign .allChkArea .ui-checkbox input {display:none;}
+
+/* ReDesign Layer Popup :S */
+.layerWrap.reDesignPop {position: fixed; right: 0; left: 0; top: 0; bottom: 0; margin: 0 auto; padding: 0; width: 100%; background-color: #000; background-color:rgba(0,0,0, 0.5); border-radius: 0; -webkit-border-radius: 0; z-index:99999;}
+.layerWrap.reDesignPop .bgAlpha {position:absolute; display:table; top:0; left:0; width:100%; height:100%;}
+.layerWrap.reDesignPop .bgAlpha .popup {display:table-cell; text-align:center; vertical-align:middle;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont {display:inline-block; background:#fff; width:90%; padding:0; border:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerCont_txtBox {padding:20px;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerCont_txtBox p {font-size:13px; text-align:left; line-height:20px;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot .ui-btn {margin:0;border:0;width:50%;border-radius:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]{width:50%; margin-left:0; border:0;border-radius:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]:first-child {background-color:#eee; color:#222;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]:last-child {background-color:#3858ed; color:#fff;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot .widthAll {width:100% !important;}
+
+
+
+.layerWrap.reDesignPop .bgAlpha .popup .titleLayerCont {display:inline-block; background-color:#fff; width:95%; padding:0; border:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .titleLayerCont .pop_Title {position:relative; border-bottom:1px solid #222; height:45px; line-height:45px; font-family:'NotoSans-Medium'; font-size:19px;}
+.layerWrap.reDesignPop .bgAlpha .popup .titleLayerCont .pop_Title .img_CloseBtn {position:absolute; top:12px; right:12px;}
+.layerWrap.reDesignPop .bgAlpha .popup .titleLayerCont .pop_Title .img_CloseBtn a {display:block; width:19px; height:19px; vertical-align:top;}
+.layerWrap.reDesignPop .bgAlpha .popup .titleLayerCont .pop_Title .img_CloseBtn a  img {width:19px; height:19px; vertical-align:top;}
+
+
+/*
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerCont_txtBox {padding:20px;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerCont_txtBox p {font-size:13px; text-align:left; line-height:20px;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot .ui-btn {margin:0;border:0;width:50%;border-radius:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]{width:50%; margin-left:0; border:0;border-radius:0;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]:first-child {background-color:#eee; color:#222;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot [class*="btn"]:last-child {background-color:#3858ed; color:#fff;}
+.layerWrap.reDesignPop .bgAlpha .popup .layerCont .layerFoot .widthAll {width:100% !important;}
+
+/* ReDesign Layer Popup :E */
+
+/* input type = text // ReDesign S: */
+.contents.redesign .ui-input-text {border-bottom:1px solid #dddddd;border-radius:0 !important;}
+.contents.redesign .ui-input-text.ui-state-disabled {background-color:#eee; opacity: 1; cursor: default !important; pointer-events: none; }
+.contents.redesign .ui-input-text.ui-state-disabled > input {background-color:unset;}
+.contents.redesign .ui-input-text.ui-focus  {border-bottom:2px solid #3858ed;border-radius:0 !important;}
+.contents.redesign .ui-input-text input {border-radius:0; font-size:13px; padding:0 5px;}
+.contents.redesign .ui-input-text input::placeholder {font-size:14px;}
+
+.reDesignPop div.ui-input-text {border-bottom:1px solid #dddddd;border-radius:0}
+.reDesignPop div.ui-input-text.ui-state-disabled {background-color:#eee; opacity: 1; cursor: default!important; pointer-events: none; }
+.reDesignPop div.ui-input-text.ui-state-disabled > input {background-color:unset}
+.reDesignPop div.ui-input-text.ui-focus  {border-bottom:2px solid #3858ed;border-radius:0 !important;}
+.reDesignPop div.ui-input-text input {border-radius:0}
+
+
+/* input type = text // ReDesign E: */
+
+/* 상단 STEP bar S: */
+.personal_data_bar {position: relative; top: -13px; margin:0 -13px;  overflow: hidden; background-color: #4c505f; font-family:'NotoSans-Thin'; font-weight:normal;}
+.personal_data_bar > ul {overflow:hidden;float:right; padding:0 13px;}
+.personal_data_bar > ul > li {float:left; font-size:0; width:10px; height:10px; margin:5px 0 0 3px; background:url('../img/loanRenewal4/step.png') no-repeat center bottom; background-size: 10px auto;}
+.personal_data_bar > ul > li:first-child {color:#fff;font-size:11px; height:20px; margin:0 3px; font-weight:bold; line-height:15px; padding:4px 0 3px 5px; width:auto; background:none;}
+.personal_data_bar > ul > li.on {background-position:0 top;}
+/* 상단 STEP bar E: */
+
+/* 동의서 체크박스 S: */
+.contents.redesign .toggleArea .toggleCont .chkList > li {overflow:hidden;padding-bottom:4px;}
+.contents.redesign .toggleArea .toggleCont .chkList > li a {display:inline-block; font-size:13px;text-align:left; padding-left:5px; border:0; color:#222; line-height:23px; font-weight:normal; background:none;}
+.contents.redesign .toggleArea .toggleCont .chkList > li.agree_line {border-top:1px solid #222; margin-top:5px; padding-top:10px;}
+.contents.redesign .toggleArea .toggleCont .chkList > li  > ul {padding:5px 0; background-color:#f8f8f8; margin:5px 0 0 0;}
+.contents.redesign .toggleArea .toggleCont .chkList > li  > ul > li {padding:0 0 0 10px;}
+.contents.redesign .toggleArea .toggleCont .chkList > li  > ul > li  a {color:#555;}
+.contents.redesign .toggleArea .toggleCont .chkList .ui-checkbox {float:right; padding-right:4px;}
+.contents.redesign .toggleArea .toggleCont .chkList .ui-checkbox input {margin:0; vertical-align:middle;}
+.contents.redesign .toggleArea .toggleCont .chkList > li  > ul > li .ui-checkbox {clear:both; float:right; padding-right:8px;}
+.contents.redesign .ui-checkbox, .contents.redesign .ui-radio {margin:0;}
+/* 동의서 체크박스 E: */
+
+/* 20190109 KBS Start*/
+.closedBtn { background: url(../img/loanRenewal4/pz_sheet.png) no-repeat; width: 30px; height: 30px; overflow: hidden; position: relative; display: block; cursor: pointer; z-index: 100; margin: 0; transform: rotate(45deg);}
+/* 20190109 KBS End*/
+
+/* tab  S:*/
+#tabs {margin-top:0px;}
+.tab_nav ul {display:table;width:100%;}
+.tab_nav ul li {display:table-cell;text-align:center; border-left:1px solid #ddd; border-top:1px solid #ddd; border-bottom:1px solid #ddd; color:#222 !important; font-size:14px !important; width:33.3333%; background-color:#f8f8f8;}
+.tab_nav ul li:last-child {border-right:1px solid #ddd;}
+.tab_nav ul li a {display:block;padding:10px 10px;}
+.tab_nav ul li a:hover,
+.tab_nav ul li a:visited {color:#222;}
+.tab_nav ul li.tab_on {background-color: #4c505f !important; border-color: #4c505f !important; color: #fff !important; border-radius: 0; }
+.tab_nav ul li.tab_on a {color:#fff;}
+.tab_nav ul li.tab_on a:hover,
+.tab_nav ul li.tab_on a:visited {color:#fff;}
+
+.tab_title {width:100%; overflow:hidden; margin-bottom:20px; margin-top:5px;}
+.tab_title.paddingLR {padding:0 12px;}
+.tab_title dl {clear:both; display:table; width:100%; height:39px; overflow:hidden;}
+.tab_title dl.anno_line,
+.tab_title dl.anno_line dt,
+.tab_title dl.anno_line dd {height:20px;}
+.tab_title dl dt {display:table-cell; width:33.3333%; height:39px; vertical-align:middle; font-size:14px;}
+.tab_title dl dt.w45percent {width:45%;}
+
+.tab_title dl dd {position:relative ;display:table-cell; height:39px; vertical-align:middle; overflow:hidden;}
+.tab_title dl dd.anno {vertical-align:top;}
+.tab_title dl dd ul {display:table; width:100%;}
+.tab_title dl dd ul li {position:relative; display:table-cell; mix-width:50%; vertical-align:top;}
+.tab_title dl dd p.tab_official_text {font-size:14px; color:#aaa; text-align:right; padding-top:5px;}
+.tab_title dl dd p.tab_official_text img {width:15px; height:15px;vertical-align:-3px;margin-right:2px;}
+.tab_title dl dd ul.official_num li {vertical-align:middle;}
+.tab_title dl dd p.nameBox {position:absolute; top:4px; right:0; width:30px; height:30px; display:none;}
+.tab_title dl dd p.nameBox a {display:block; width:30px; height:30px;}
+.tab_title dl dd p.nameBox a img {width:30px; height:30px;}
+
+
+
+
+
+.tab_title dl dd.limit_check {text-align:right;}
+.tab_title dl dd.limit_check div {display:inline-block;}
+.tab_title dl dd.limit_check span {padding-left:5px;} 
+
+.tab_title dl dd .limit_checkArea {position:absolute; right:0; top:8px;}
+.tab_title dl dd .limit_checkArea div {display:inline-block;}
+.tab_title dl dd .limit_checkArea span {padding-left:5px;}
+
+
+
+
+.tab_title dl dd.loan_day {position:relative;}
+.tab_title dl dd.loan_day > div {display:inline-block;} 
+.tab_title dl dd.loan_day select {width:80px;}
+.tab_title dl dd.loan_day p {position:absolute; top:7px; right:0; width:100px;}
+.tab_title dl dd.loan_day p button.ui-btn{text-align:center; height: 25px; padding: 0 5px; vertical-align: middle; text-align: center; background: #eee; border: 1px solid #eee; color: #555;}
+
+.tab_title ul.bullet_s_line {padding-top:10px;}
+.tab_title ul.bullet_s_line li {color:#aaa; font-size:14px; text-indent:-5px; margin-left:5px;}
+
+
+.tab_title .add_Search_Box {border-bottom:1px solid #ddd;padding: 8px 5px;font-size: 14px;color: #aaa;}
+.tab_title .add_Search_box {position:relative; border-bottom:1px solid #ddd; padding:10px 5px; display:table; width:100%;  }
+.tab_title .add_Search_box .add_Search_ViewBox {vertical-align:middle; font-size:14px; padding:0 ; color:#aaa;}
+.tab_title .add_Search_detail {margin-bottom:5px;}
+
+.ui-page-theme-a #tabs #tab_official .official_list_ex {width:100%; overflow:hidden; background:#aaa; text-align:center; padding:30px 0;}
+.ui-page-theme-a #tabs #tab_mobile p.certify_btn {position:absolute; right:0; bottom:8px;}
+.ui-page-theme-a #tabs #tab_mobile p.certify_btn button {min-width:60px; height:25px; padding:0 5px;  vertical-align:middle; text-align:center; background:#eee; border:1px solid #eee; color:#555;}
+.ui-page-theme-a #tabs #tab_mobile p.certify_btn button.on {background:#3858ed; border:1px solid #3858ed; color:#fff;}
+.ui-page-theme-a #tabs #tab_mobile p.certify_time {position:absolute; right:65px; top:2px; line-height:38px; text-align:center; color:#ff0000;}
+.tab_agree {width:100%;}
+.tab_agree .tab_agree_title {padding:0 10px; margin-bottom:5px; background-color:#eee; font-size:14px; line-height:38px;}
+/* tab  E:*/
+
+/* clearable text inputs */
+.clearable {position:relative; display:inline-block; width:100%;overflow:hidden; }
+.contents.redesign .clearable .ui-input-text input.inputText {padding-right:24px; width:100%; box-sizing:border-box;}
+.clearable_clear {display:block; position:absolute; right:0; top:0; padding:0 8px; font-size:notmal; font-size:1.2em; user-select:none; cursor:pointer;}
+.clearable input::-ms-clear {display:block;}
+
+/* layer_popup back Mask */
+.mask2{z-index:-1000 !important;}
+
+/*  */
+.contents.redesign .text_title {padding:13px 12px; border-bottom:1px solid #222; color:#222; font-size:15px; font-family:'NotoSans-Medium';}
+.contents.redesign dl.chkList_normal {overflow:hidden;width:100%; padding:13px 12px; display:table;}
+.contents.redesign dl.chkList_normal dt{display:table-cell;}
+.contents.redesign dl.chkList_normal dt p {font-size:14px; color:#222; line-height:24px;}
+.contents.redesign dl.chkList_normal dt p.hyphen {padding-left:5px; font-size:12px; color:#aaa; line-height:20px;}
+.contents.redesign dl.chkList_normal dd{display:table-cell; width:30px; text-align:right; vertical-align:top;}
+.contents.redesign dl.addSearch {overflow:hidden; width:100%; margin-bottom:7px;}
+.contents.redesign dl.addSearch dt {padding:7px 12px;}
+.contents.redesign dl.addSearch dd {position:relative; padding:0 12px;}
+.contents.redesign dl.addSearch dd input[type="text"] {padding:0;}
+.contents.redesign dl.addSearch dd button {position:absolute; right:13px; top:7px; color:#555; font-size:11px; border:0; background-color:#eee; padding:5px; text-align:center; width:60px;}
+.contents.redesign dl.imgNumChecking {overflow:hidden; width:100%; display:table; padding:0 12px;}
+.contents.redesign dl.imgNumChecking dt {display:table-cell; height:70px;}
+.contents.redesign dl.imgNumChecking dt p {width:100%; height:70px;}
+.contents.redesign dl.imgNumChecking dt p img {width:140px; height:70px; border:0; }
+.contents.redesign dl.imgNumChecking dd {display:table-cell; vertical-align:bottom; text-align:right; position:relative;}
+.contents.redesign dl.imgNumChecking dd button {position:absolute; right:0px; top:0px; color:#555; font-size:11px; border:0; background-color:#eee; padding:5px; text-align:center; width:60px;}
+.contents.redesign dl.imgNumChecking dd div {width:120px; float:right;}
+.contents.redesign dl.imgNumChecking dd input[type="text"] {width:120px; text-align:center;}
+
+.textGbox a{display:block; width:96%;padding:10px 15px 15px 0px; background:url('../img/loanRenewal4/next.png') no-repeat right center; background-size:8px auto;}
+.textGbox {width:100%; border:1px solid #ddd; background:#f8f8f8;}
+.textGbox dl {overflow:hidden; width:100%; display:table; }
+.textGbox dl dt{display:table-cell;width:100px;vertical-align:middle; text-align:center;}
+.textGbox dl dt img {width:65px; height:65px; vertical-align:middle;}
+.textGbox dl dd{display:table-cell;vertical-align:middle;}
+.textGbox dl dd ul {}
+.textGbox dl dd ul li {color:#888; font-size:12px;}
+.textGbox dl dd ul li:first-child{color:#222; font-size:15px;}
+.textBbox, .textLGbox {width:100%; padding:15px 10px;  border-radius:5px; margin-bottom:10px;}
+.textBbox {background-color:#6b7ac1;}
+.textLGbox {background-color:#68a4c0;}
+.textBbox dl, .textLGbox dl{display:table;}
+.textBbox dl dt, .textLGbox dl dt {display:table-cell; color:#fff; vertical-align:middle;width:80px; text-align:center; font-size:17px;font-family:'NotoSans-Medium';}
+.textBbox dl dd, .textLGbox dl dd {display:table-cell; color:#fff; vertical-align:middle;font-size:12px; padding-left:10px;}
+.textBbox dl dd{background:url('../img/loanRenewal4/line_01.png') no-repeat left center;background-size:1px auto;}
+.textLGbox dl dd{background:url('../img/loanRenewal4/line_02.png') no-repeat left center;background-size:1px auto;}
+
+.inquire_List {width:100%; border-top:1px solid #fff; margin-bottom:10px;}
+.inquire_Product {padding:10px; border-bottom:1px solid #ddd;}
+.inquire_Product dl {clear:both;overflow:hidden;}
+.inquire_Product dl dt {}
+.inquire_Product dl dd {float:right; clear:both; overflow:hidden;margin-top: 5px}
+.inquire_Product dl dd:nth-child(2) {margin-top:0;}
+.inquire_title {width:100%; font-size:15px; line-height:20px; font-family:'NotoSans-Medium';}
+.qualified {display:inline-block; background-color:#eee; border-radius:5px; margin-left:10px;}
+.qualified a {display:block; color:#555 !important; font-size:11px; padding:1px 8px; margin-right:8px; background:url('../img/loanRenewal4/next_icon.png') no-repeat right center; background-size:auto 8px;}
+.inquire_interest {width:60px; color:#e84736; border:1px solid #e84736; text-align:center; border-radius:18px; line-height:18px; font-size:13px; margin-top:5px;}
+.limit_money {float:left; font-size:13px; margin-right:10px; font-family:'NotoSans-Medium'; letter-spacing: -.5px;}
+.limit_money span {font-size:20px; font-weight:bold; padding-right:2px;}
+.limit_select {float:left;}
+.contents.redesign .limit_select button.ui-btn {background-color:#bfc3cc; color:#fff; width:50px; text-align:center; font-size:14px;padding:5px 0; border:0;}
+.contents.redesign .limit_select.choice button.ui-btn {background-color:#4c505f;}
+.limit_box {position:relative; display:none; clear:both; border:1px solid #888; padding:15px; margin-top:10px;}
+.contents.redesign .limit_box.choice {display:block;}
+
+
+
+.limit_check {width:100%; padding-bottom:5px;}
+.limit_check div.limit_check_box {display:inline-block; padding-left:10px;}
+.limit_check div.limit_check_box > div {width:22px; height:22px;}
+
+.limit_input {position:relative; overflow:hidden; width:100%; padding-bottom:0px; font-size:13px;}
+.limit_input ul {overflow:hidden; display:table; width:100%;}
+.limit_input ul li {display:table-cell; position:relative; vertical-align:middle; text-align:right;color:#3858ed; font-size:15px; line-height:30px;}
+.limit_input ul li p {position:absolute; right:0; bottom:0; line-height:38px; color:#222;}
+
+.limit_input .won {position:absolute; top:0; right:100px; line-height:38px; z-index:10;}
+.limit_input .manwon {position:absolute; top:0; right:0; line-height:38px;}
+
+.limit_input .wonInput {position:absolute; top:0; right:0; line-height:38px; z-index:10;}
+.limit_input .manwonInput {line-height:38px; padding:0 5px; color:#5a74ec;}
+.limit_input .manwonInput.textalignRight {text-align:right;}
+
+
+.limit_input .ui-input-text .textInput {width:100%;}
+.limit_input ~ p.nameBox {position:absolute; top:4px; right:110px !important; width:30px; height:30px; display:none;}
+
+.contents.redesign .limit_textarea {overflow:hidden; height:63px; margin-bottom:10px;}
+.contents.redesign .limit_textarea .ui-input-text {border:1px solid #ddd; border-radius:0 !important; font-size:13px; line-height:18px; padding:10px;}
+.contents.redesign .limit_text {padding:10px 0; font-size:14px;}
+.contents.redesign .limit_btn {width:100%; }
+.contents.redesign .limit_btn a {display:block; overflow:hidden;}
+.contents.redesign .limit_btn .ui-btn {border:0; width:100%; text-align:center; background-color:#3858ed; color:#fff; border-radius:0; font-size:16px; line-height:18px; padding:10px 0;}
+
+.contents.redesign .limit_box > div:first-child {padding-top:30px;}
+
+.limit_cencel {position:absolute; top:15px; right:15px;}
+.limit_cencel a {display:block; width:19px; height:19px;}
+.limit_cencel a img {width:19px; height:19px;}
+
+
+/* guide_text_box */
+.guide_text_box {position:relative;}
+.guide_text_box div {width:100%; }
+.guide_text_box .finish_img {text-align:center;}
+.guide_text_box .finish_img img {width:90px; padding:10px 0;}
+.guide_text_box .title_master {font-size:19px; color:#222; padding:5px 0; margin-bottom:5px; font-family:'NotoSans-Medium'}
+.guide_text_box .title_master span {font-size:15px; color:#5a74ec; padding-left:5px;}
+
+
+
+.guide_text_box .title_master_center {font-size:19px; color:#222; padding:5px 0; margin-bottom:5px; font-family:'NotoSans-Medium'; text-align:center;}
+
+
+
+.guide_text_box .title_1Depth {font-size:16px; line-height:30px; background:url('../img/loanRenewal4/sprt_line01.png')no-repeat left top;background-size:20px 3px; margin-bottom:3px; font-family:'NotoSans-Medium'}
+.guide_text_box .title_1Depth.noIcon  {background:none;}
+.guide_text_box .title_1Depth_Btype {font-size:16px; line-height:24px; background:url('../img/loanRenewal4/sprt_line02.png')no-repeat left center;background-size:5px 5px; margin-bottom:0px; padding-left: 8px; font-family:'NotoSans-Medium'}
+.guide_text_box .title_1Depth_Ctype {font-size:15px; line-height:24px; padding: 0 0 10px 15px; text-indent:-13px; border-bottom:1px dashed #bcbcbc; margin-bottom:10px;}
+.guide_text_box .title_1Depth_Ctype.depth_End {padding-bottom:0; border-bottom:0;}
+.guide_text_box .title_1Depth_Ctype span {color:#152fa6;}
+.guide_text_box .title_2Depth {font-size:16px; line-height:30px; background:url('../img/loanRenewal4/sprt_line02.png')no-repeat left center;background-size:5px 5px; margin-bottom:3px; padding-left: 8px; font-family:'NotoSans-Medium'}
+
+
+
+.guide_text_box .text_normal {font-size:18px; line-height:20px; color:#222; margin-bottom:5px;}
+
+
+
+.guide_text_box .text_normal span {color:#152fa6;}
+.guide_text_box .text_2Depth {font-size:14px; line-height:20px; color:#222; margin-bottom:5px; padding-left:8px;}
+.guide_text_box .text_2Depth span {color:#152fa6;}
+.guide_text_box .table_text {width:100%; border-top:1px solid #222; font-size:14px;}
+.guide_text_box .table_text dl {display:table;width:100%;}
+.guide_text_box .table_text dl dt {display:table-cell;width:33.3333%; border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background-color:#fafafc; padding:10px;}
+.guide_text_box .table_text.left_w130px dl dt {width:130px;} 
+.guide_text_box .table_text dl dt p {padding:5px 0; color:#888; border-radius:3px; background-color:#eee; font-size:11px; text-align:center; margin-top:5px;}
+.guide_text_box .table_text dl dd {display:table-cell;border-right:1px solid #ddd;border-bottom:1px solid #ddd; padding:10px;}
+.guide_text_box .table_text dl dd span.sprt_circle {background:url('../img/loanRenewal4/sprt_circle.png')no-repeat left center;background-size:4px 4px; padding-left:10px;}
+.guide_text_box .title_center {text-align:center; font-family:'NotoSans-Medium'; color:#222; font-size:13px; padding-bottom:5px;}
+.guide_text_box .textBar_2EA {width:80%; margin:0px auto; color:#fff;margin-bottom:20px;}
+.guide_text_box .textBar_2EA dl {display:table; width:100%;}
+.guide_text_box .textBar_2EA dl dd {display:table-cell; line-height:30px; text-align:center; padding:0 20px; background-color:#738af2; font-size:13px;}
+.guide_text_box .textBar_2EA dl dd:first-child {border-top-left-radius:30px;border-bottom-left-radius:30px;}
+.guide_text_box .textBar_2EA dl dd:last-child {background-color:#415cd9;border-top-right-radius:30px;border-bottom-right-radius:30px;}
+.guide_text_box .footnote {width:100%; text-align:right; color:#888; font-size:12px; line-height:20px;}
+.guide_text_box .depth_End {margin-bottom:20px;}
+.guide_text_box .textGbox {width:100%; border:1px solid #ddd; background:#eee; padding:15px;}
+.guide_text_box .textGbox>div {color:#222; font-size:14px;}
+.guide_text_box .textGbox>div.dayline {text-align:center; font-family:'NotoSans-Medium'; line-height:20px; padding-top:20px;}
+.guide_text_box .textGbox>div.nameline {text-align:center; font-family:'NotoSans-Medium'; line-height:20px; padding-bottom:20px;}
+.guide_text_box .textGbox>div.checkline {text-align:center; font-family:'NotoSans-Medium'; line-height:30px; }
+.guide_text_box .textGbox>div.checkline  .ui-checkbox {display:inline; width:22px; height:22px;margin-left:3px;}
+.guide_text_box .textGbox>div.checkline  .ui-checkbox input[type="checkbox"] {vertical-align:middle;}
+.guide_text_box .textGbox>div. {position:relative;}
+
+.guide_text_box .icon_blue {background:url('../img/loanRenewal4/sprt_line02.png')no-repeat left 8px; background-size:5px 5px; padding-left:8px; margin-bottom:10px;}
+.guide_text_box .icon_gray {background:url('../img/loanRenewal4/sprt_circle.png')no-repeat left 9px; background-size:4px 4px; padding-left:8px; margin-bottom:10px;}
+.guide_text_box .textGbox .icon_gray {margin-bottom:5px;}
+.guide_text_box .font_s13_c888 {font-size:13px; line-height:20px; color:#888;}
+.guide_text_box .textGbox>div.font_s13_c888 {font-size:13px; line-height:20px; color:#888;}
+.guide_text_box .textGbox>div p.font_lineH25 {line-height:25px;padding-top:5px;}
+.contents.redesign .next_btn  button.ui-btn {width:100%; border:1px solid #3858ed;color:#3858ed; text-align:center; border-radius:0; padding:10px 0; font-size:15px; font-family:'NotoSans-Medium';}
+
+.contents.redesign .guide_text_box .btnArea {position:relative;}
+.guide_text_box ul.sort_circle  li {background:url('../img/loanRenewal4/sprt_circle.png')no-repeat left 9px;background-size:4px 4px; padding-left:10px; font-size:14px;}
+.table_TopRight_btn {position:relative; width:100%; text-align:right; font-size:11px; color:#aaa; overflow:hidden; margin-top:-30px;}
+.table_TopRight_btn a { vertical-align:middle; width:100px; line-height:30px; display:inline-block;}
+.table_TopRight_btn a:visited, .table_TopRight_btn a:hover  {color:#aaa !important;}
+.table_TopRight_btn.questionIcon img {width:13px;height:13px; vertical-align:middle;}
+.detailView_Btn {padding:10px 0;}
+.detailView_Btn dl {display:table; width:100%;}
+.detailView_Btn dl > dt {display:table-cell; font-family:'NotoSans-Medium'; font-size:16px; line-height:18px;}
+.detailView_Btn dl > dt p {font-family:'NotoSans-Light'; font-size:14px; line-height:16px;}
+.detailView_Btn dl > dd {display:table-cell; width:65px; vertical-align:top;}
+.detailView_Btn dl dd button.ui-btn {float:right; color:#222; text-align:center !important; font-size:11px; width:60px; padding:5px !important; background-color:#eee; border:0;}
+.detailView_Btn dl dd button.ui-btn:hover,
+.detailView_Btn dl dd button.ui-btn:visited {color:#222; background-color:#eee;}
+.checkbox_YesNo {padding: 10px 0; }
+.checkbox_YesNo dl {display:table; width:100%; line-height:20px;}
+.checkbox_YesNo dl dt {display: table-cell; font-size:14px; background:url('../img/loanRenewal4/sprt_line02.png')no-repeat left center;background-size:5px 5px; margin-bottom:0px; padding-left: 8px;}
+.checkbox_YesNo dl dd {display: table-cell; width:150px; font-size:13px; color:#222;}
+.checkbox_YesNo dl dd ul {display:table; width:100%; }
+.checkbox_YesNo dl dd ul li {display:table-cell; width:50%;}
+.checkbox_YesNo .ui-checkbox input[type="checkbox"]{float:left; margin-right:3px !important;}
+.checkbox_All_Each {padding:10px 0; }
+.checkbox_All_Each dl {display:table; width:100%; line-height:20px;}
+.checkbox_All_Each dl dt {display: table-cell; font-size:14px; background:url('../img/loanRenewal4/sprt_line02.png')no-repeat left center;background-size:5px 5px; margin-bottom:0px; padding-left: 8px;}
+.checkbox_All_Each dl:first-child dd {display: table-cell; width:75px; font-size:13px; color:#222;}
+.checkbox_All_Each dl:last-child dd {width:100%;padding:10px 0 10px 10px;} 
+.checkbox_All_Each dl:last-child dd ul {display:table; width:100%;}
+.checkbox_All_Each dl:last-child dd ul li{display:table-cell;}
+.checkbox_All_Each dl:last-child dd ul li:last-child {width:75px;}
+.checkbox_All_Each .ui-checkbox input[type="checkbox"]{float:left; margin-right:3px !important;}
+.table_Set {padding-bottom:20px;}
+.table_Set table {font-family:'NotoSans-Light';}
+.table_Set table thead tr {border-top:1px solid #ddd;}
+.table_Set table thead tr th {background-color:#f8f8f8; color:#222;}
+.table_Set table tbody tr td {color:#555;}
+.table_Set table thead tr th,
+.table_Set table tbody tr td {border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding:5px; vertical-align:middle;}
+.table_Set table thead tr th:first-child,
+.table_Set table tbody tr:first-child td:first-child {border-left:1px solid #ddd;}
+.table_Set table thead tr:first-child th:first-child,
+.table_Set table tbody tr:first-child td:first-child {width:70px;}
+
+.repay_schedule {position:relative; margin-left:-10px; margin-right:-10px;}
+.repay_schedule p {font-size:12px; color:#aaa; line-height:23px; }
+.repay_schedule table {font-family:'NotoSans-Light'; width:100%;}
+.repay_schedule table thead tr {border-top:1px solid #ddd;}
+.repay_schedule table thead tr th {background-color:#e0e4f8; color:#222; text-align:center; padding: 10px 2px;}
+.repay_schedule table thead tr th {border-right:1px solid #bfcbff; border-bottom:1px solid #bfcbff; padding:5px; vertical-align:middle;}
+.repay_schedule table thead tr th:first-child {border-left:1px solid #bfcbff;}
+.repay_schedule table thead tr td {background-color:#f8f8f8; border-right:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center; padding: 5px 2px;}
+.repay_schedule table thead tr td:last-child {border-right:1px solid #bfcbff;}
+.repay_schedule table tbody tr td {color:#555;}
+.repay_schedule table tbody tr td {border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding: 10px 2px; vertical-align:middle; text-align:center;}
+.repay_schedule table tbody tr td:first-child {border-left:1px solid #ddd;}
+.repay_schedule table thead tr:first-child th:first-child,
+.repay_schedule table tbody tr:first-child td:first-child {width:30px;}
+.repay_schedule table tbody tr td:nth-child(5) {font-family:'NotoSans-Medium';}
+.repay_schedule_scroll { max-height:234px;overflow-y:auto; }
+
+.pop_Cont {text-align:left; font-family:'NotoSans-Light';}
+
+.pop_Cont.repay_schedule {position:relative; margin-left:0px; margin-right:0px; padding:10px;}
+.pop_Cont.repay_schedule p {font-size:12px; color:#aaa; line-height:23px; text-align:left;}
+.pop_Cont.repay_schedule table {font-family:'NotoSans-Light'; width:100%;}
+.pop_Cont.repay_schedule table thead tr {border-top:1px solid #ddd;}
+.pop_Cont.repay_schedule table thead tr th {background-color:#e0e4f8; color:#222; text-align:center; padding: 10px 2px;}
+.pop_Cont.repay_schedule table thead tr th {border-right:1px solid #bfcbff; border-bottom:1px solid #bfcbff; padding:5px; vertical-align:middle;}
+.pop_Cont.repay_schedule table thead tr th:first-child {border-left:1px solid #bfcbff;}
+.pop_Cont.repay_schedule table thead tr td {background-color:#f8f8f8; border-right:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center; padding: 5px 2px;}
+.pop_Cont.repay_schedule table thead tr td:last-child {border-right:1px solid #bfcbff;}
+.pop_Cont.repay_schedule table tbody tr td {color:#555;}
+.pop_Cont.repay_schedule table tbody tr td {border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding: 10px 2px; vertical-align:middle; text-align:center;}
+.pop_Cont.repay_schedule table tbody tr td:first-child {border-left:1px solid #ddd;}
+.pop_Cont.repay_schedule table thead tr:first-child th:first-child,
+.pop_Cont.repay_schedule table tbody tr:first-child td:first-child {width:30px;}
+
+
+
+.pop_Cont.pop_Addsearch {position:relative; margin-left:0px; margin-right:0px; padding:10px;}
+.pop_Cont.pop_Addsearch p {font-size:12px; color:#aaa; line-height:18px; text-align:left;}
+.pop_Cont.pop_Addsearch dl {display:table; width:100%; height:39px; overflow:hidden;}
+.pop_Cont.pop_Addsearch dl dt {display:table-cell; width:28%; height:39px; vertical-align:middle; font-size:14px;}
+.pop_Cont.pop_Addsearch dl dd {position:relative ;display:table-cell; height:39px; vertical-align:middle; overflow:hidden;}
+
+.pop_Cont .pop_AddGuideBox {width:100%; padding:20px 20px 20px 0px; border:1px solid #ddd; background-color:#f8f8f8;}
+.pop_Cont .pop_AddGuideBox dl dt {width:80px; color:#888; font-family:'NotoSans-Medium'; text-align:center; font-size:13px;}
+.pop_Cont .pop_AddGuideBox dl dd p {color:#222; font-size:13px; line-height:20px;}
+.pop_Cont .pop_AddGuideBox dl dd p:first-child {font-family:'NotoSans-Medium'; padding-bottom:3px;}
+
+
+ul.radio_YesNo li div {display:inline-block; vertical-align:middle; padding-right:5px;}
+
+.contents.redesign ul.radio_YesNo > li input[type="radio"].radioBtn {overflow:hidden;margin:0;padding:0;width:20px;height:20px;vertical-align:top;border:0;background:url('../img/loanRenewal4/radiobtn.png') no-repeat 0 0;background-size:cover;-webkit-appearance:none;background-position:0 bottom; background-size:100% auto;}
+.contents.redesign ul.radio_YesNo > li input[type="radio"].radioBtn:checked {background-position:0 top;}
+.contents.redesign ul.radio_YesNo > li input[type="radio"].radioBtn:disabled {background-position:0 -40px;}
+.contents.redesign ul.radio_YesNo > li input[type="radio"].radioBtn:checked:disabled {background-position:0 -60px;}
+.contents.redesign ul.radio_YesNo > li input[type="radio"].radioBtn + label {display:inline-block;max-width:90%;line-height:145%;letter-spacing:-0.05em;}
+
+.contents.redesign .next_btn  button.ui-btn {width:100%; border:1px solid #3858ed;color:#3858ed; text-align:center; border-radius:0; padding:10px 0; font-size:15px; font-family:'NotoSans-Medium';}
+
+
+/* btn */
+.contents.redesign .btn_AddSearch.ui-btn,
+.contents.redesign .btn_OfficeSearch.ui-btn,
+.contents.redesign .btn_JobSearch.ui-btn{position:absolute; top:5px; right:0; width:60px; background-color:#eee; color:#555; text-align:center; font-size:11px; padding:5px;}
+.contents.redesign .btn_AddSearch_2.ui-btn {position:absolute; top:5px; width:60px; background-color:#3858ed; border:0px solid #3858ed; color:#fff; text-align:center; font-size:11px; padding:5px;}
+.contents.redesign .btn_AccountSearch.ui-btn{position:absolute; top:5px; right:0; width:70px; background-color:#eee; color:#555; text-align:center; font-size:11px; padding:5px;}
+.contents.redesign .btn_AccountSearch_2.ui-btn{position:absolute; top:5px; right:0; width:70px; background-color:#3858ed; border:1px solid #3858ed; color:#fff; text-align:center; font-size:11px; padding:5px;}
+
+.pop_Cont .pop_btn_AddSearch.ui-btn{position:absolute; top:5px; right:0; width:60px; height:25px; vertical-align:middle; background-color:#eee; color:#555; text-align:center; font-size:11px; padding:5px; border:1px solid #eee;}
+
+/* font */
+.f12_Caaa_LH23 {font-size:12px; color:#aaa; line-height:18px; text-indent:-7px; margin-left:7px;}
+.f12_C3858ed_LH23 {font-size:12px; color:#3858ed; line-height:18px; text-indent:-7px; margin-left:7px;}
+
+.t_align_right {text-align:right;}
+
+.div_End_Line,
+.dl_End_Line {padding-bottom:20px;}
+.p_End_Line {padding-bottom:10px;}
+
+.f_weight_B {font-weight:bold}
+
+
+
+/* gnb_top   */
+.redesign.gnb {position:absolute;top:0;left:0;z-index:99999;width:100%;height:45px;background:#fff;}
+.redesign.gnb a {display:block; width:44px; height:44px;}
+.redesign.gnb .all-menu {position:absolute;top:0px;right:0;font-size:0;line-height:0;}
+.redesign.gnb .all-menu img {display:inline-block;width:44px; height:44px;}
+.redesign.gnb .back_btn {overflow: hidden;position:absolute;top:0;left:0;width:45px;}
+.redesign.gnb .back_btn img {width:44px; height:44px;}
+.redesign.gnb .top_title {overflow:hidden;height:45px;text-align:center;font-weight:bold;line-height:45px;color:#222;}
+

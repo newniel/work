@@ -1,0 +1,577 @@
+@charset "utf-8";
+
+/*jquery.mobile-1.4.2.min.css 초기화*/
+.ui-checkbox, .ui-radio {
+    margin: 0 0;
+    position: relative;
+}
+.ui-page-theme-a .ui-checkbox .ui-btn {
+    background-color: none;
+    border-color: #cecece;
+    color: #333 !important;
+    font-weight: normal !important;
+}
+
+.ui-checkbox .ui-btn, .ui-radio .ui-btn {
+    padding: 0 0;
+    text-align: left;
+    white-space: normal;
+    z-index: 1;
+}
+
+
+/*공통*/
+#container .clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.limit_info{
+    width: 100%;
+    background-color: #f8f8f8;
+    border: 1px solid #DDD;
+    box-sizing: border-box;
+    text-align: center;
+    height: 74px;
+    line-height: 74px;
+    font-family: 'NotoSans-Medium' !important;
+    margin-bottom: 25px;
+}
+
+.limit_info .single, .limit_info .double{
+    font-size: 15px;
+    color: #222;
+    letter-spacing: 0.4px !important;
+}
+
+.limit_info .single span, .limit_info .double span{
+    color: #3858ed;
+    background: url('../limit_img/m_limit_title_info.png') 0 bottom repeat-x;
+    background-size: 50% 50%;
+}
+
+.limit_info .double span::before{
+    content: '';
+    background: url('../limit_img/m_limit_title_dd.png') 0 0 no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background-size: 12px 8px;
+    padding-right: 6px;
+}
+
+
+.limit_reult_text{
+    font-family:'NotoSans-Medium';
+    font-size: 15px;
+    color:#333;
+    padding-left: 12px;
+    letter-spacing: 0.4px !important;
+}
+
+.limit_reult_text span{
+    font-family: 'NotoSans-Bold';
+    font-size: 15px;
+    color: #3858ed;
+    font-weight: bold;
+    border-bottom: 1px solid #3858ed;
+}
+
+
+.limit_reult .clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.limit_reult_info{
+    margin: 17px 0 0 0;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+}
+.limit_reult_info li{
+    position: relative;
+    border-bottom: 1px solid #DDD;
+}
+
+
+.limit_reult_info li > .ui-checkbox  > label{
+    color: #222 !important;
+    font-size: 15px !important;
+    font-family: 'NotoSans-Medium';
+    vertical-align: middle;
+    overflow: inherit !important;
+    margin: 0 !important;
+    padding: 15px 12px !important;
+    width: 100% !important; 
+}
+
+.limit_reult_info li > .ui-checkbox  > label::after{
+    display: none;
+}
+
+.limit_reult_info li > .ui-checkbox  > label::before{
+    content: '';
+    background: url(../limit_img/m_limit_ckeck_off.png) 0 0 no-repeat;
+    background-size: 22px 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    float: left;
+}
+
+
+
+.limit_reult_info > li > .ui-checkbox > input[type=checkbox]{
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    display: none;
+}
+
+.limit_reult_info > li > .ui-checkbox > .ui-checkbox-on::before{
+    content: '';
+    background: url(../limit_img/m_limit_ckeck_on.png) 0 0 no-repeat;
+    background-size: 22px 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+} 
+
+.limit_reult_info .limit_reult_title > span{
+    font-size: 15px;
+    color:#222;
+    font-family:'NotoSans-Medium';
+    letter-spacing: 0.4px !important;
+    float: left;
+}
+
+.limit_reult_info .limit_reult_title .limit_reult_reload{
+    float: right;
+    font-family: 'NotoSans-Medium';
+    font-size: 15px;
+    color: #222;
+    clear: initial;
+    margin-right: 26px;
+}
+
+.limit_reult_info .reload_btn{
+    text-indent: -9999px;
+    background: url(../limit_img/m_limit_icon_reload.png) center center no-repeat;
+    background-size: 21px 21px;
+    width: 27px !important;
+    height: 27px;
+    border: none;
+    position: absolute !important;
+    top: 10px;
+    right: 8px;
+}
+
+
+
+.limit_reult_number > span{
+    color: #3858ed;
+    font-size: 20px;
+    font-weight: bold;
+}
+    
+.limit_reult_number > span > span{
+    font-size: 15px;
+    color: #3858ed;
+    margin-left: 1px;
+    font-family:'NotoSans-Regular';
+}
+.limit_reult_number .limit_reult_percent{
+    float: left;
+    margin-top: 6px;
+    margin-left: 32px;
+    font-family: 'NotoSans-Bold';
+}
+.limit_reult_number .limit_reult_price{
+    float: right;
+    margin-top: 4px;
+    font-family: 'NotoSans-Bold';
+}
+
+.limit_reult_info > li .limit_phone_info{
+    font-family:'NotoSans-Regular';
+    border: 1px solid #DDD;
+    color:#737373;
+    font-size: 12px;
+    background: url(../limit_img/m_limit_icon_phone.png) 10px center no-repeat;
+    padding: 14px 13px 14px 40px;
+    margin-top: 15px;
+    background-size: 21px 21px;
+    letter-spacing: 0.4px !important;
+}
+
+.limit_apply_info{
+    position: relative;
+    width: 100%;
+    height: 73px;
+    background-color: #7786ce;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 17px;
+    margin-bottom: 19px;
+}
+
+.limit_apply_info > div{
+    float: left;
+    padding: 16px 0 15px 24px;
+    width: calc(100% /2);
+}
+
+.limit_apply_info > div > p {
+    font-family:'NotoSans-Regular';
+    font-size: 13px;
+    color: #FFF;
+    letter-spacing: 0.4px !important;
+}
+
+.limit_apply_info > div > p span{
+    font-family: 'NotoSans-Bold';
+    font-size: 20px;
+    color: #FFF;
+    margin-right: 1px;
+}
+
+.limit_apply_info > div:nth-of-type(2){
+    background: url(../limit_img/m_limit_icon_bar.png) 0 center no-repeat;
+    background-size: 1px 44px;
+}
+
+.limit_apply_info > div:nth-of-type(2) p span{
+    margin-left: 2px;
+}
+
+.limit_apply_info .limit_apply_balloon {
+    position: absolute;
+    top: -18px;
+    right: 13px;
+    animation: ani 1s ease-out infinite alternate;
+    width: 50px;
+    height: 51px;
+}
+
+.limit_apply_info .limit_apply_balloon img{
+    width: 100%;
+}
+
+@keyframes ani{
+    0%{transform:translate(0,-10px);}
+    100%{transform:translate(0,0px);}
+}
+
+.limit_btn{
+    font-family:'NotoSans-Regular' !important;
+    letter-spacing: 0.4px !important;
+}
+
+
+
+
+/**************************************************************************************
+    popup
+**************************************************************************************/
+.limit_popup_bg{
+    position: fixed;
+    background: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 13px;
+}
+
+.limit_popup{
+    width: 100%;
+    height: 290px;
+    background: #FFF;
+    position: relative;
+    top: calc(100%/2 - 145px);
+}
+
+.limit_popup .limit_popup_content{
+    padding: 0 13px;   
+}
+
+.limit_popup .limit_popup_content > strong{
+    display: block;
+    font-family:'NotoSans-Regular';
+    font-size: 15px;
+    color: #222;
+    text-align: center;
+    padding: 22px 0 22px 0;
+    font-weight: normal;
+}
+
+.limit_popup .limit_popup_content table{  
+    border-top: 1px solid #4c4c4c;
+    width: 100%;
+    
+}
+
+.limit_popup_content table th{
+    font-family:'NotoSans-Regular';
+    background:#FFF;
+    font-size: 15px;
+    color: #4c505f;
+    border: none;
+    vertical-align: top;
+    padding-top: 17px !important;
+}
+
+.limit_popup_content table td{
+    padding: 17px 0 11px 12px;
+}
+.limit_popup_content table td .limit_popup_content_strong{
+    float: left;
+    font-family: 'NotoSans-Medium';
+    color: #222;
+    font-size: 15px;
+}
+
+.limit_popup_content table td .limit_popup_content_percent{
+    float: right;
+    font-family: 'NotoSans-Bold';
+    color: #3858ed;
+    font-size: 20px;
+}
+
+.limit_popup_content table td .limit_popup_content_percent span{
+    font-family:'NotoSans-Regular';
+    font-size: 15px;
+}
+
+.limit_popup_content table td .limit_popup_content_cost{
+    font-family: 'NotoSans-Bold';
+    text-align: right;
+    font-size: 20px;
+    color:#222;
+    margin-top: 13px;
+}
+
+.limit_popup_content table td .limit_popup_content_cost span{
+    font-family:'NotoSans-Regular';
+    font-size: 13px;
+}
+
+
+.limit_popup_content table td div input[type="text"]{
+    font-family:'NotoSans-Regular';
+    box-sizing: border-box;
+    border: none;
+    background: #EEE;
+    border-bottom: 1px solid #DDD;
+    text-align: right;
+    font-size: 15px;
+    min-height: 42px;
+    padding: 0 13px;
+    width: 207px;
+}
+
+.limit_popup_content table td div .input_text{
+    font-family:'NotoSans-Regular';
+    font-size: 13px;
+    color: #222;
+    display: inline-block;
+    padding: 17px 0 0 6px;
+}
+
+.limit_popup_content table .th_input{
+    padding-top: 27px !important;
+}
+
+.limit_popup_content_input .limit_popup_cost_info{
+    display: block;
+    padding-top: 8px;
+    color: #aaa;
+}
+
+.limit_popup_content_input > div{
+    overflow: hidden;
+}
+
+.limit_popup_btn{
+    width: 100%;
+    border-top: 1px solid#3858ed;
+    box-sizing: border-box;
+}
+
+.limit_popup_btn button{
+    float: left;
+    text-align: center;
+    width: calc(100%/2);
+    padding: 14px 0;
+    margin: 0;
+    border-radius: inherit !important;
+    border:none;
+    font-size: 15px;
+}
+.limit_popup_btn button.btn_cancel{
+    font-family:'NotoSans-Regular';
+    background: #FFF;
+    color: #3858ed;
+}
+.limit_popup_btn button.btn_ok{
+    font-family:'NotoSans-Regular';
+    background: #3858ed;
+    color: #FFF;
+}
+
+.limit_popup_double{
+    height: initial;
+    top: calc(50% - 292px);
+}
+
+.limit_popup_double_wrap .limit_popup_double_info{
+    padding: 0 12px;
+}
+
+.limit_popup_double_info p{
+    font-size: 15px;
+    color: #000;
+    font-family:'NotoSans-Regular';
+}
+
+.limit_popup_double_info p:nth-of-type(1){
+    float: left;
+}
+
+.limit_popup_double_info p:nth-of-type(2){
+    float: right;
+}
+
+.limit_popup_double_info p span{
+    color: #3858ed;
+    font-family: 'NotoSans-Bold';
+    margin-left: 4px;
+}
+
+.limit_popup_double_info p > .cont{
+    font-weight: bold;
+    font-family: 'NotoSans-Bold';
+    border-bottom: 1px solid #3858ed;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.limit_popup_double_wrap .limit_popup_double_content{
+    border-top: 1px solid #4c4c4c;
+    border-bottom: 1px solid #ddd;
+    margin-top: 18px;
+    height: 299px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.limit_popup_double_content > p {
+    font-family:'NotoSans-Regular';
+    font-size: 15px;
+    color:#222;
+    padding: 20px 10px 0 10px;
+}
+
+.limit_popup_double_content ul li{
+    border-bottom: 1px solid #DDD;
+    box-sizing: border-box;
+}
+
+.limit_popup_double_content ul li .ui-checkbox label{
+    color: #222 !important;
+    font-size: 15px !important;
+    font-family: 'NotoSans-Medium';
+    vertical-align: middle;
+    overflow: inherit !important;
+    margin: 0 !important;
+    padding: 15px 12px !important;
+    width: 100% !important; 
+}
+
+.limit_popup_double_content ul li .ui-checkbox label::after{
+    display: none;
+}
+
+.limit_popup_double_content ul li .ui-checkbox label::before{
+    content: '';
+    background: url(../limit_img/m_limit_ckeck_off.png) 0 0 no-repeat;
+    background-size: 22px 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    float: left;
+}
+
+.limit_popup_double_content ul li .ui-checkbox input[type=checkbox]{
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    display: none;
+}
+
+.limit_popup_double_content ul li .ui-checkbox .ui-checkbox-on::before{
+    content: '';
+    background: url(../limit_img/m_limit_ckeck_on.png) 0 0 no-repeat;
+    background-size: 22px 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+} 
+
+.limit_popup_double_title span{
+    float: left;
+    font-family:'NotoSans-Regular';
+    font-size: 15px;
+    color:#222;
+}
+
+.limit_popup_double_title span.popup_double_cardtype{
+    float: right;
+    font-size: 13px;
+    color: #7786ce;
+}
+
+.limit_popup_double_number .limit_popup_double_date{ 
+    float: left;
+    font-family:'NotoSans-Regular';
+    font-size: 13px;
+    padding: 6px 0 0 33px;
+}
+
+.limit_popup_double_number .limit_popup_double_price{
+    float: right;
+    font-family: 'NotoSans-Bold';
+    font-size: 13px;
+}
+.limit_popup_double_number .limit_popup_double_price span{
+    font-size: 20px;
+    margin: 0 2px 0 9px;
+}
+
+.limit_popup_double_apply{
+    padding: 33px 0;
+    text-align: center;
+}
+.limit_popup_double_apply p{
+    font-family:'NotoSans-Regular';
+    font-size: 15px;
+    color:#222;
+    letter-spacing: 0.6px;
+}
+.limit_popup_double_apply p span{
+    font-family: 'NotoSans-Medium';
+    font-size: 15px;
+    color: #3858ed;
+    background: url('../limit_img/m_limit_title_info.png') 0 bottom repeat-x;
+}
