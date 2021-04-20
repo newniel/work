@@ -381,7 +381,7 @@
     font-family:'NotoSans-Regular';
     font-size: 13px;
     color: #222;
-    display: inline-block;
+    float: right;
     padding: 17px 0 0 6px;
 }
 
