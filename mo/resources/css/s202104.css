@@ -440,6 +440,12 @@
     padding: 0 12px;
 }
 
+.limit_popup_double_info.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .limit_popup_double_info p{
     font-size: 15px;
     color: #000;
@@ -489,7 +495,7 @@
     box-sizing: border-box;
 }
 
-.limit_popup_double_content ul li .ui-checkbox label{
+.limit_popup_double_content ul li label{
     color: #222 !important;
     font-size: 15px !important;
     font-family: 'NotoSans-Medium';
@@ -500,30 +506,29 @@
     width: 100% !important; 
 }
 
-.limit_popup_double_content ul li .ui-checkbox label::after{
+.limit_popup_double_content ul li label::after{
     display: none;
 }
 
-.limit_popup_double_content ul li .ui-checkbox label::before{
+.limit_popup_double_content ul li label::before{
     content: '';
     background: url(../limit_img/m_limit_ckeck_off.png) 0 0 no-repeat;
     background-size: 22px 22px;
     width: 22px;
     height: 22px;
-    display: inline-block;
     margin-right: 10px;
     vertical-align: middle;
     float: left;
 }
 
-.limit_popup_double_content ul li .ui-checkbox input[type=checkbox]{
+.limit_popup_double_content ul li input[type=checkbox]{
     width: 24px;
     height: 24px;
     margin-right: 14px;
     display: none;
 }
 
-.limit_popup_double_content ul li .ui-checkbox .ui-checkbox-on::before{
+.limit_popup_double_content ul li .ui-checkbox-on::before{
     content: '';
     background: url(../limit_img/m_limit_ckeck_on.png) 0 0 no-repeat;
     background-size: 22px 22px;
@@ -545,6 +550,16 @@
     float: right;
     font-size: 13px;
     color: #7786ce;
+}
+
+.limit_popup_double_number{
+    width: 100%;
+}
+
+.limit_popup_double_number.clearfix{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .limit_popup_double_number .limit_popup_double_date{ 
