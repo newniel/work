@@ -19,6 +19,14 @@
     z-index: 1;
 }
 
+.ui-icon-check:after, html .ui-btn.ui-checkbox-off.ui-checkbox-off:after{
+    display: none;
+}
+
+.ui-icon-check:after, html .ui-btn.ui-checkbox-on.ui-checkbox-on:after{
+    display: none;
+}
+
 
 /*공통*/
 #container .clearfix::after{
