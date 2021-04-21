@@ -343,6 +343,7 @@
     font-family: 'NotoSans-Bold';
     color: #3858ed;
     font-size: 20px;
+    margin-top: -6px;
 }
 
 .limit_popup_content table td .limit_popup_content_percent span{
@@ -393,6 +394,10 @@
     display: block;
     padding-top: 8px;
     color: #aaa;
+}
+
+.limit_popup_content_input{
+    margin-bottom: 16px;
 }
 
 .limit_popup_content_input > div{
